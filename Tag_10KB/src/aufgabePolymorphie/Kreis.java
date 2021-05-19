@@ -1,6 +1,5 @@
 package aufgabePolymorphie;
 
-import java.awt.Point;
 
 public class Kreis extends Figur{
 	
@@ -10,8 +9,8 @@ public class Kreis extends Figur{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Kreis (Point position, double radius) {
-		super.setPosition(position);
+	public Kreis (Punkt position, double radius) {
+		super.setMittelpunkt(position);
 		this.radius=radius;
 	}
 

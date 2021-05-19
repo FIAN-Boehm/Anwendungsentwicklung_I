@@ -1,79 +1,89 @@
 package aufgabePolymorphie;
 
-import java.awt.Point;
-
 public class Rechteck extends Figur {
 
-	private Point a, b, c, d;
+	private Punkt p1, p2, p3, p4;
 
 	public Rechteck() {
 		// TODO Auto-generated constructor stub
 	}
 
-	
-	
-	public Rechteck(Point a, Point b, Point c, Point d) {
+	public Rechteck(Punkt p1, Punkt p2, Punkt p3, Punkt p4) {
 		super();
-		this.a = a;
-		this.b = b;
-		this.c = c;
-		this.d = d;
+		this.p1 = p1;
+		this.p2 = p2;
+		this.p3 = p3;
+		this.p4 = p4;
 	}
 
-	public Rechteck(Point position, int hoehe, int breite) {
+	public Rechteck(Punkt position, double hoehe, double breite) {
 		super.setMittelpunkt(position);
-		setA(new Point(this.getMittelpunkt().x-(int)(Math.round(breite/2)), this.getMittelpunkt().y-(int)(Math.round(hoehe/2))));
-		setB(new Point(this.getMittelpunkt().x+(int)(Math.round(breite/2)), this.getMittelpunkt().y-(int)(Math.round(hoehe/2))));
-		setC(new Point(this.getMittelpunkt().x+(int)(Math.round(breite/2)), this.getMittelpunkt().y+(int)(Math.round(hoehe/2))));
-		setD(new Point(this.getMittelpunkt().x-(int)(Math.round(breite/2)), this.getMittelpunkt().y+(int)(Math.round(hoehe/2))));
+		setP1(new Punkt(this.getMittelpunkt().getdX() - (breite / 2), this.getMittelpunkt().getdY() - (hoehe / 2)));
+		setP2(new Punkt(this.getMittelpunkt().getdX() + (breite / 2), this.getMittelpunkt().getdY() - (hoehe / 2)));
+		setP3(new Punkt(this.getMittelpunkt().getdX() + (breite / 2), this.getMittelpunkt().getdY() + (hoehe / 2)));
+		setP4(new Punkt(this.getMittelpunkt().getdX() - (breite / 2), this.getMittelpunkt().getdY() + (hoehe / 2)));
 	}
 
-
-	public Point getA() {
-		return a;
+	public Punkt getP1() {
+		return p1;
 	}
 
-	public void setA(Point a) {
-		this.a = a;
+	public void setP1(Punkt p1) {
+		this.p1 = p1;
 	}
 
-	public Point getB() {
-		return b;
+	public void setP1(double dX, double dY) {
+		this.setP1(dX, dY);
 	}
 
-	public void setB(Point b) {
-		this.b = b;
+	public Punkt getP2() {
+		return p2;
 	}
 
-	public Point getC() {
-		return c;
+	public void setP2(Punkt p2) {
+		this.p2 = p2;
 	}
 
-	public void setC(Point c) {
-		this.c = c;
+	public void setP2(double dX, double dY) {
+		this.setP2(dX, dY);
 	}
 
-	public Point getD() {
-		return d;
+	public Punkt getP3() {
+		return p3;
 	}
 
-	public void setD(Point d) {
-		this.d = d;
+	public void setP3(Punkt p3) {
+		this.p3 = p3;
+	}
+
+	public void setP3(double dX, double dY) {
+		this.setP3(dX, dY);
+	}
+
+	public Punkt getp4() {
+		return p4;
+	}
+
+	public void setP4(Punkt p4) {
+		this.p4 = p4;
+	}
+
+	public void setP4(double dX, double dY) {
+		this.setP4(dX, dY);
 	}
 
 	@Override
 	public double getFlaeche() {
-		return a.distance(b) * a.distance(d);
+		return p1.distance(p2) * p1.distance(p4);
 	}
 
 	@Override
 	public double getUmfang() {
-		return (a.distance(b)*2)+(b.distance(c)*2);
+		return (p1.distance(p2) * 2) + (p2.distance(p3) * 2);
 	}
-	
-	
-	public void setPosition() {
-		
+
+	public void setPosition(Punkt position) {
+		this.setMittelpunkt(position);
 	}
 
 }

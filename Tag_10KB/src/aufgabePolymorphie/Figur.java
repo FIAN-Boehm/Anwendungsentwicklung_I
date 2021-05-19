@@ -1,15 +1,14 @@
 package aufgabePolymorphie;
 
-import java.awt.Point;
 
 public abstract class Figur {
-	private Point mittelpunkt;
+	private Punkt mittelpunkt;
 	
 	public Figur() {
 		super();
 	}
 	
-	public void bewegen(Point ziel) {
+	public void bewegen(Punkt ziel) {
 		mittelpunkt=ziel;
 	}
 	
@@ -18,12 +17,13 @@ public abstract class Figur {
 	public abstract double getFlaeche();
 	public abstract double getUmfang();
 
-	public Point getMittelpunkt() {
+	public Punkt getMittelpunkt() {
 		return mittelpunkt;
 	}
 
-	public void setMittelpunkt(Point position) {
-		this.mittelpunkt = position;
+	public void setMittelpunkt(Punkt position) {
+		this.mittelpunkt=position;
+		
 	}
 
 }

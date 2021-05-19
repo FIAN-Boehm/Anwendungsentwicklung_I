@@ -1,6 +1,5 @@
 package aufgabePolymorphie;
 
-import java.awt.Point;
 
 public class Quadrat extends Rechteck {
 
@@ -10,17 +9,15 @@ public class Quadrat extends Rechteck {
 
 	// Konstructor stellt sicher, dass ein Quadrat erstellt wird
 	// gezeichnet wird von oben links nach oben rechts und weiter im Uhrzeigersinn
-	public Quadrat(Point position, int seitenlänge) {
+	public Quadrat(Punkt position, double seitenlänge) {
 		super.setMittelpunkt(position);
-		setA(new Point(this.getMittelpunkt().x - (int) (Math.round(seitenlänge / 2)),
-				this.getMittelpunkt().y - (int) (Math.round(seitenlänge / 2))));
-		setB(new Point(this.getMittelpunkt().x + (int) (Math.round(seitenlänge / 2)),
-				this.getMittelpunkt().y - (int) (Math.round(seitenlänge / 2))));
-		setC(new Point(this.getMittelpunkt().x + (int) (Math.round(seitenlänge / 2)),
-				this.getMittelpunkt().y + (int) (Math.round(seitenlänge / 2))));
-		setD(new Point(this.getMittelpunkt().x - (int) (Math.round(seitenlänge / 2)),
-				this.getMittelpunkt().y + (int) (Math.round(seitenlänge / 2))));
+		setP1((position.getdX() - (seitenlänge / 2)), position.getdY() - (seitenlänge / 2));
+		setP2((position.getdX() + (seitenlänge / 2)),position.getdY() - (seitenlänge / 2));
+		setP3((position.getdX() + (seitenlänge / 2)),position.getdY() + (seitenlänge / 2));
+		setP4((position.getdX() - (seitenlänge / 2)),position.getdY() + (seitenlänge / 2));
 
 	}
+
+	
 
 }
