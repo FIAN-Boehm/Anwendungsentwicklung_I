@@ -1,4 +1,4 @@
-package aufgabe2;
+package schlafzeitrechner;
 
 public class WeckerTest {
 

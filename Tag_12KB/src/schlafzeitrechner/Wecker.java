@@ -1,4 +1,4 @@
-package aufgabe2;
+package schlafzeitrechner;
 
 import java.time.Duration;
 import java.time.Instant;

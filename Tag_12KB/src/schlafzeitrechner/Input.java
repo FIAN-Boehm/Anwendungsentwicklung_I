@@ -1,4 +1,4 @@
-package aufgabe2;
+package schlafzeitrechner;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
