@@ -2,16 +2,19 @@ package flugzeuge;
 
 public final class Doppeldecker extends Flugzeug {
 
-	private boolean offenesCockpit = true;
+	private final boolean offenesCockpit;
 	private static final int LOOPINGSPEED = 320;
 
-	public Doppeldecker(String hersteller, int maxSpeed, boolean offenesCockpit) {
+	public Doppeldecker(String hersteller, int maxSpeed, boolean offenesCockpit, String immat) {
 		super(hersteller, maxSpeed, 2);
 		this.offenesCockpit = offenesCockpit;
+		this.setImmatNummer(immat);
 	}
 
-	public Doppeldecker(String hersteller, int maxSpeed) {
+	public Doppeldecker(String hersteller, int maxSpeed, String immat) {
 		super(hersteller, maxSpeed, 2);
+		this.setImmatNummer(immat);
+		this.offenesCockpit=true;
 	}
 
 	public boolean isOffenesCockpit() {

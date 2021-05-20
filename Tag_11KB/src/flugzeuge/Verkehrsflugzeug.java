@@ -4,9 +4,10 @@ public class Verkehrsflugzeug extends Flugzeug {
 
 	private int passagiere;
 
-	public Verkehrsflugzeug(String hersteller, int maxSpeed, int passagiere) {
+	public Verkehrsflugzeug(String hersteller, int maxSpeed, int passagiere, String immat) {
 		super(hersteller, maxSpeed, 1);
 		this.passagiere = passagiere;
+		this.setImmatNummer(immat);
 	}
 
 	public int getPassagiere() {

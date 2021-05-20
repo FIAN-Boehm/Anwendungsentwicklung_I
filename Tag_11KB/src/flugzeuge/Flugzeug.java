@@ -43,6 +43,13 @@ abstract class Flugzeug {
 	public void setAnzahlFluegel(int anzahlFluegel) {
 		this.anzahlFluegel = anzahlFluegel;
 	}
+	
+
+	@Override
+	public String toString() {
+		return "Flugzeug [hersteller=" + hersteller + ", maxSpeed=" + maxSpeed + ", immatNummer=" + immatNummer
+				+ ", anzahlFluegel=" + anzahlFluegel + "]";
+	}
 
 	abstract public boolean getLooping();
 	
