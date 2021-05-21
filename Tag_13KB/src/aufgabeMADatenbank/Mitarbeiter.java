@@ -46,8 +46,6 @@ public abstract class Mitarbeiter {
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
 		Mitarbeiter other = (Mitarbeiter) obj;
 		if (datumEintritt == null) {
 			if (other.datumEintritt != null)
