@@ -1,10 +1,10 @@
-package schlafzeitrechner;
+package weckerStellen;
 
 public class WeckerTest {
 
 	public static void main(String[] args) {
 
-		Wecker wecker = new Wecker();
+		WeckerSequence wecker = new WeckerSequence();
 		wecker.weckZeitStellen();
 	}
 }

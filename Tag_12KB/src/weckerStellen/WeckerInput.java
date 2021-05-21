@@ -1,11 +1,11 @@
-package schlafzeitrechner;
+package weckerStellen;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-public class Input {
+public class WeckerInput {
 
 	private static Scanner sc;
 	

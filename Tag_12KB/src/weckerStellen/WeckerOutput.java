@@ -1,10 +1,10 @@
-package schlafzeitrechner;
+package weckerStellen;
 
 import java.time.Duration;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
-public class Output {
+public class WeckerOutput {
 
 	
 	public static void weckerEingabeAufforderung() {
@@ -21,8 +21,12 @@ public class Output {
 	public static void uhrzeitAusgabe() {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm");
 		LocalTime jetzt = LocalTime.now();
-		
 		System.out.println("Es ist "+jetzt.format(dtf)+" Uhr");
+	}
+	
+	//need to get completed. asking for the day of week for the alarm
+	public static void tagAngeben() {
+		
 	}
 	
 }

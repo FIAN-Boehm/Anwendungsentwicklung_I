@@ -1,4 +1,4 @@
-package schlafzeitrechner;
+package weckerStellen;
 
 import java.time.Duration;
 import java.time.LocalTime;
