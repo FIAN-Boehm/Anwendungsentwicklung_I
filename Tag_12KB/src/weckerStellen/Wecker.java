@@ -14,6 +14,7 @@ public class Wecker {
 		sc = new Scanner(System.in);
 	}
 
+	//calculation
 	public Duration zeitErrechnen(LocalTime weckzeit) {
 		this.jetzt = LocalTime.now();
 		this.timeElapsed = Duration.between(weckzeit, jetzt);
@@ -33,6 +34,10 @@ public class Wecker {
 		return time;
 
 	}
+	// need to get completed. asking for the day of week for the alarm
+		public static void tagAngeben() {
+
+		}
 
 	// output
 	public void weckerEingabeAufforderung() {
@@ -52,10 +57,7 @@ public class Wecker {
 		System.out.println("Es ist " + jetzt.format(dtf) + " Uhr");
 	}
 
-	// need to get completed. asking for the day of week for the alarm
-	public static void tagAngeben() {
-
-	}
+	
 
 	// sequence
 	public void weckerRun() {
