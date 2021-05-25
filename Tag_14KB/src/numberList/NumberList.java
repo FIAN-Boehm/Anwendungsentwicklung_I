@@ -10,12 +10,10 @@ public class NumberList {
 		array = new double[0];
 	}
 
-	
 	@Override
 	public String toString() {
 		return "NumberList [array=" + Arrays.toString(array) + "]";
 	}
-
 
 	public double[] getArray() {
 		return array;
@@ -34,19 +32,19 @@ public class NumberList {
 
 	public void removeElement() {
 		double[] tmpArray = new double[this.array.length - 1];
-		System.arraycopy(array, 0, tmpArray, 0, array.length-1);
+		System.arraycopy(array, 0, tmpArray, 0, array.length - 1);
 		setArray(tmpArray);
 	}
+
 	public void removeElement(int i) {
 		double[] tmpArray = new double[this.array.length - 1];
 		double[] tmpArrayFirst = new double[i];
-		double[] tmpArrayLast = new double[array.length-(i-1)];
-		
-		
+		double[] tmpArrayLast = new double[array.length - (i - 1)];
+
 		System.arraycopy(array, 0, tmpArrayFirst, 0, (i));
-		System.arraycopy(array, i+1, tmpArrayLast, 0, (array.length-(i+1)));
+		System.arraycopy(array, i + 1, tmpArrayLast, 0, (array.length - (i + 1)));
 		System.arraycopy(tmpArrayFirst, 0, tmpArray, 0, tmpArrayFirst.length);
-		System.arraycopy(tmpArrayLast, 0, tmpArray, tmpArrayFirst.length, tmpArrayLast.length-2);
+		System.arraycopy(tmpArrayLast, 0, tmpArray, tmpArrayFirst.length, tmpArrayLast.length - 2);
 		setArray(tmpArray);
 	}
 

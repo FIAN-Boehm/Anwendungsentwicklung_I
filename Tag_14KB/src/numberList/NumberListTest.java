@@ -10,23 +10,23 @@ public class NumberListTest {
 		System.out.print("Wert: ");
 		System.out.println(nl.getElement(i));
 		System.out.print("Länge: ");
-		System.out.println(nl.getLength());
+		System.out.println(nl);
 		}
 		
-		System.out.println(nl.toString());
+		System.out.println(nl);
 		nl.removeElement();
-		System.out.println(nl.toString());
+		System.out.println(nl);
 
 		nl.removeElement(1);
-		System.out.println(nl.toString());
+		System.out.println(nl);
 		nl.removeElement(3);
-		System.out.println(nl.toString());
+		System.out.println(nl);
 		nl.removeElement(1);
-		System.out.println(nl.toString());
+		System.out.println(nl);
 		nl.removeElement(0);
-		System.out.println(nl.toString());
+		System.out.println(nl);
 		nl.removeElement(4);
-		System.out.println(nl.toString());
+		System.out.println(nl);
 	}
 
 }
