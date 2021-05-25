@@ -27,6 +27,7 @@ public class Wecker {
 		LocalTime time = LocalTime.now();
 		try {
 			time = LocalTime.parse(sc.nextLine(), dateTimeFormatter);
+			
 		} catch (Exception e) {
 			System.err.println("Falsches Format!");
 
