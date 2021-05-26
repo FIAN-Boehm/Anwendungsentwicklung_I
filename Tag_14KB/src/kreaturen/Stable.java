@@ -5,22 +5,18 @@ public class Stable {
 
 	private Creature creature;
 	private Stable nextStable;
-	
 
 	public Stable() {
 		super();
 	}
 
 	public Stable(int anzahlStaelle) {
-		for (int i = 0; i < anzahlStaelle; i++) {
-			this.nextStable = new Stable();
+		if (anzahlStaelle > 1) {
+			nextStable = new Stable(anzahlStaelle - 1);
 		}
-		
 	}
 
 	public Stable(int anzahlStaelle, Creature... creatures) {
-		
-		
 
 	}
 
@@ -40,18 +36,45 @@ public class Stable {
 		this.nextStable = nextStable;
 	}
 
-	
 	public void addCreature(Creature creature) {
-		
+		if (this.creature == null) {
+			this.creature = creature;
+		} else {
+			nextStable.addCreature(creature);
+		}
 	}
-	
+
+	public void addCreature(Creature... creatures) {
+		for (Creature creature : creatures) {
+			if (this.creature == null) {
+				this.creature = creature;
+			} else {
+				nextStable.addCreature(creature);
+			}
+		}
+	}
+
 	@Override
 	public String toString() {
 		return null;
 	}
 
 	public void printStable() {
-		
+		if (creature != null) {
+			PrintHelper.printLine();
+			creature.printCreature();
+			nextStable.printStable();
+		} else {
+			PrintHelper.printLine();
+			PrintHelper.printEmptyCell();
+			if (nextStable != null) {
+				nextStable.printStable();
+			}
+
+		}
+		if (nextStable == null) {
+			PrintHelper.printLine();
+		}
 	}
 
 }

@@ -34,6 +34,7 @@ public class Creature {
 	}
 	
 	public void printCreature() {
+		
 		if(this.type.equals(CreatureType.HEADY)) {
 		printHeady();
 		}else if (this.type.equals(CreatureType.FOOTY)) {
@@ -43,6 +44,7 @@ public class Creature {
 		}else {
 			System.out.println("Diese Kreatur kenne ich nicht!");			
 		}
+		
 	}
 	
 	/**
