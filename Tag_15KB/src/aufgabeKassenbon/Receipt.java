@@ -5,24 +5,24 @@ import java.util.ArrayList;
 public class Receipt {
 
 	private ArrayList<ReceiptItem> eintraege;
-	private int shopID;
-	private String shopName, strasse, plz, ort, telNr;
+	private String shopName, strasse, plz, ort, telNr, shopID;
 
 	public Receipt() {
 		super();
 		eintraege = new ArrayList<>();
-		shopID = 042;
+		shopID = "042";
 		shopName = "FreitagsShop";
 		strasse = "Marchstr. 23";
+		ort = "Berlin";
 		plz = "10587";
 		telNr = "Tel.: 030 314 213 86";
 	}
 
-	public int getShopID() {
+	public String getShopID() {
 		return shopID;
 	}
 
-	public void setShopID(int shopID) {
+	public void setShopID(String shopID) {
 		this.shopID = shopID;
 	}
 

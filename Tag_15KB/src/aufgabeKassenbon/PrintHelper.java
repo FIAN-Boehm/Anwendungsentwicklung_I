@@ -45,7 +45,7 @@ public class PrintHelper {
 	
 	public static void printAdressField(Receipt r) {
 		printLine();
-		System.out.println("|\t"+r.getShopName()+" "+r.getShopID()+"\t\t|");
+		System.out.println("|\t"+r.getShopName()+" "+r.getShopID()+"\t|");
 		System.out.println("|\t"+r.getStrasse()+"\t\t|");
 		System.out.println("|\t"+r.getPlz()+" "+r.getOrt()+"\t\t|");
 		System.out.println("|\t"+r.getTelNr()+"\t|");
@@ -57,6 +57,11 @@ public class PrintHelper {
 		System.out.println("\t\t\t=====");
 		System.out.printf("Summe EUR\t\t%,.2f\n",summe);
 		System.out.println("\t\t\t=====");
+	}
+
+	public static void gibListeAus(String s) {
+		System.out.println(s);
+		
 	}
 	
 }
