@@ -36,24 +36,26 @@ public class Stable {
 		this.nextStable = nextStable;
 	}
 
-//	public void addCreature(Creature creature) {
-//		if (this.creature == null) {
-//			this.creature = creature;
-//		} else {
-//			nextStable.addCreature(creature);
-//		}
-//	}
-
-	public void addCreature(Creature... creatures) {
-		int i =0;
-			if (this.creature == null) {
-				this.creature = creatures[i];
-				i++;
-			} else {
-				nextStable.addCreature(creature);
-			}
-		
+	public void addCreature(Creature creature) {
+		if (this.creature == null) {
+			this.creature = creature;
+		} else if (nextStable != null) {
+			nextStable.addCreature(creature);
+		} else {
+			System.out.println("Stable is full, no room for new creature!");
+		}
 	}
+
+//	public void addCreature(Creature... creatures) {
+//		int i =0;
+//			if (this.creature == null) {
+//				this.creature = creatures[i];
+//				i++;
+//			} else {
+//				nextStable.addCreature(creature);
+//			}
+//		
+//	}
 
 	@Override
 	public String toString() {
@@ -64,7 +66,9 @@ public class Stable {
 		if (creature != null) {
 			PrintHelper.printLine();
 			creature.printCreature();
-			nextStable.printStable();
+			if (nextStable != null) {
+				nextStable.printStable();
+			}
 		} else {
 			PrintHelper.printLine();
 			PrintHelper.printEmptyCell();
@@ -76,6 +80,19 @@ public class Stable {
 		if (nextStable == null) {
 			PrintHelper.printLine();
 		}
+	}
+
+	public void feedCreatures(int anzahlFutterkuebel) {
+		if (creature != null && creature.isHungry() && anzahlFutterkuebel > 0) {
+			creature.feedCreature();
+		} else if (creature == null && anzahlFutterkuebel > 0) {
+			System.out.println("No creature in this stable!");
+			
+		}
+		if (nextStable != null) {
+			nextStable.feedCreatures(anzahlFutterkuebel - 1);
+		}
+		
 	}
 
 }
