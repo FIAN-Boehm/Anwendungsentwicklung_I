@@ -36,22 +36,23 @@ public class Stable {
 		this.nextStable = nextStable;
 	}
 
-	public void addCreature(Creature creature) {
-		if (this.creature == null) {
-			this.creature = creature;
-		} else {
-			nextStable.addCreature(creature);
-		}
-	}
+//	public void addCreature(Creature creature) {
+//		if (this.creature == null) {
+//			this.creature = creature;
+//		} else {
+//			nextStable.addCreature(creature);
+//		}
+//	}
 
 	public void addCreature(Creature... creatures) {
-		for (Creature creature : creatures) {
+		int i =0;
 			if (this.creature == null) {
-				this.creature = creature;
+				this.creature = creatures[i];
+				i++;
 			} else {
 				nextStable.addCreature(creature);
 			}
-		}
+		
 	}
 
 	@Override
