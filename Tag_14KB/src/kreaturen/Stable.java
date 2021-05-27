@@ -16,8 +16,13 @@ public class Stable {
 		}
 	}
 
-	public Stable(int anzahlStaelle, Creature... creatures) {
-
+//	public Stable(int anzahlStaelle, Creature... creatures) {
+//
+//	}
+	
+	@Override
+	public String toString() {
+		return "Stable [creature=" + creature + ", nextStable=" + nextStable + "]";
 	}
 
 	public Creature getCreature() {
@@ -57,10 +62,7 @@ public class Stable {
 //		
 //	}
 
-	@Override
-	public String toString() {
-		return null;
-	}
+	
 
 	public void printStable() {
 		if (creature != null) {
@@ -75,24 +77,32 @@ public class Stable {
 			if (nextStable != null) {
 				nextStable.printStable();
 			}
-
 		}
 		if (nextStable == null) {
 			PrintHelper.printLine();
+			System.out.println();
 		}
 	}
 
+	
+
 	public void feedCreatures(int anzahlFutterkuebel) {
-		if (creature != null && creature.isHungry() && anzahlFutterkuebel > 0) {
-			creature.feedCreature();
-		} else if (creature == null && anzahlFutterkuebel > 0) {
-			System.out.println("No creature in this stable!");
-			
+		if (creature != null && anzahlFutterkuebel > 0) {
+			if (creature.isHungry()) {
+				creature.feedCreature();
+				anzahlFutterkuebel--;
+			}
+			if (nextStable != null) {
+				nextStable.feedCreatures(anzahlFutterkuebel);
+			}
 		}
-		if (nextStable != null) {
-			nextStable.feedCreatures(anzahlFutterkuebel - 1);
+		if ((nextStable == null && anzahlFutterkuebel > 0)||(creature == null && anzahlFutterkuebel > 0)) {
+			System.out.println("All creatures are fed, some food is left!");
+		} else if (creature != null && creature.isHungry() && anzahlFutterkuebel == 0) {
+			System.out.println("Not enough food, some creatures go hungry!");
+		}else if ((creature == null && anzahlFutterkuebel == 0)||(!creature.isHungry() && nextStable == null && anzahlFutterkuebel == 0)) {
+			System.out.println("All creatures are fed, no food left!");
 		}
-		
 	}
 
 }
