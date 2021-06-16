@@ -7,6 +7,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 public class CalcGui extends JFrame {
 
@@ -18,7 +20,7 @@ public class CalcGui extends JFrame {
 	public CalcGui() {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(300, 300);
-		this.setVisible(true);
+		
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
 
@@ -59,6 +61,113 @@ public class CalcGui extends JFrame {
 		decimal.add(decField);
 		binary.add(binField);
 		hex.add(hexField);
+		
+		
+		decField.getDocument().addDocumentListener(new DocumentListener() {
+			
+			@Override
+			public void removeUpdate(DocumentEvent e) {
+				try {
+					int input = Integer.parseInt(decField.getText());
+					binField.setText(Integer.toBinaryString(input));
+					hexField.setText(Integer.toHexString(input));
+				} catch (Exception e2) {
+//					e2.printStackTrace();
+//					JOptionPane.showMessageDialog(null, "Bitte einen gültigen Wert eingeben (Dezimalzahl).", "Fehler!", JOptionPane.ERROR_MESSAGE, null);
+				}
+				
+			}
+			
+			@Override
+			public void insertUpdate(DocumentEvent e) {
+				try {
+					int input = Integer.parseInt(decField.getText());
+					binField.setText(Integer.toBinaryString(input));
+					hexField.setText(Integer.toHexString(input));
+				} catch (Exception e2) {
+//					e2.printStackTrace();
+//					JOptionPane.showMessageDialog(null, "Bitte einen gültigen Wert eingeben (Dezimalzahl).", "Fehler!", JOptionPane.ERROR_MESSAGE, null);
+				}
+				
+			}
+			
+			@Override
+			public void changedUpdate(DocumentEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+		binField.getDocument().addDocumentListener(new DocumentListener() {
+			
+			@Override
+			public void removeUpdate(DocumentEvent e) {
+				try {
+					int decimal = Integer.parseInt(binField.getText(), 2);
+					decField.setText(decimal + "");
+					hexField.setText(Integer.toHexString(decimal));
+				} catch (Exception e2) {
+//					e2.printStackTrace();
+//					JOptionPane.showMessageDialog(null, "Bitte einen gültigen Wert eingeben (Binärzahl z.B. 101010).", "Fehler!", JOptionPane.ERROR_MESSAGE, null);
+				}
+				
+			}
+			
+			@Override
+			public void insertUpdate(DocumentEvent e) {
+				try {
+					int decimal = Integer.parseInt(binField.getText(), 2);
+					decField.setText(decimal + "");
+					hexField.setText(Integer.toHexString(decimal));
+				} catch (Exception e2) {
+//					e2.printStackTrace();
+//					JOptionPane.showMessageDialog(null, "Bitte einen gültigen Wert eingeben (Binärzahl z.B. 101010).", "Fehler!", JOptionPane.ERROR_MESSAGE, null);
+				}
+			}
+			
+			@Override
+			public void changedUpdate(DocumentEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+		hexField.getDocument().addDocumentListener(new DocumentListener() {
+			
+			@Override
+			public void removeUpdate(DocumentEvent e) {
+				try {
+					int decimal = Integer.parseInt(hexField.getText(), 16);
+					decField.setText(decimal + "");
+					binField.setText(Integer.toBinaryString(decimal));
+
+				} catch (Exception e2) {
+//					e2.printStackTrace();
+//					JOptionPane.showMessageDialog(null, "Bitte einen gültigen Wert eingeben (Hexadezimalzahl z.B. 2f).", "Fehler!", JOptionPane.ERROR_MESSAGE, null);
+				}
+				
+			}
+			
+			@Override
+			public void insertUpdate(DocumentEvent e) {
+				try {
+					int decimal = Integer.parseInt(hexField.getText(), 16);
+					decField.setText(decimal + "");
+					binField.setText(Integer.toBinaryString(decimal));
+
+				} catch (Exception e2) {
+//					e2.printStackTrace();
+//					JOptionPane.showMessageDialog(null, "Bitte einen gültigen Wert eingeben (Hexadezimalzahl z.B. 2f).", "Fehler!", JOptionPane.ERROR_MESSAGE, null);
+				}
+				
+			}
+			
+			@Override
+			public void changedUpdate(DocumentEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 
 		content.add(decLabel);
 		content.add(decimal);
@@ -70,18 +179,19 @@ public class CalcGui extends JFrame {
 		this.getContentPane().add(BorderLayout.CENTER, content);
 		this.getContentPane().add(BorderLayout.SOUTH, buttonbox);
 		
-		decField.setText("42");
-		binField.setText("101010");
-		hexField.setText("2a");
+//		decField.setText("42");
+//		binField.setText("101010");
+//		hexField.setText("2a");
+//		
+		this.setVisible(true);
 	}
 
 	class DecFieldListener implements ActionListener {
-		int input = 0;
-
+	
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			try {
-				input = Integer.parseInt(decField.getText());
+				int input = Integer.parseInt(decField.getText());
 				binField.setText(Integer.toBinaryString(input));
 				hexField.setText(Integer.toHexString(input));
 			} catch (Exception e2) {
