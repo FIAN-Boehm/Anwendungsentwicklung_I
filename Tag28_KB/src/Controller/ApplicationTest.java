@@ -3,6 +3,7 @@ package Controller;
 import java.io.File;
 
 import Model.Woerter;
+import View.MainFrame;
 
 public class ApplicationTest {
 
@@ -15,6 +16,8 @@ public class ApplicationTest {
 		System.out.println(w.wortAussuchen());
 		w.entferneGeratenesWort("Batman");
 		System.out.println(w.toString());
+		MainFrame mf = new MainFrame();
+		System.out.println(mf.getMainPanel().toString());
 		
 	}
 

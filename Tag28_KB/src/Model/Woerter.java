@@ -135,4 +135,6 @@ public class Woerter {
 	public void entferneGeratenesWort(String wort) {
 		rateWoerterListe.remove(wort);
 	}
+	
+	
 }
