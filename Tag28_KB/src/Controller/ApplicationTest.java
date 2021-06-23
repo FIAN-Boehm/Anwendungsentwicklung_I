@@ -18,6 +18,7 @@ public class ApplicationTest {
 		System.out.println(w.toString());
 		MainFrame mf = new MainFrame();
 		System.out.println(mf.getMainPanel().toString());
+//		RateLabelMaker.machRateLabel(w.getZielWort(), mf.getMainPanel().getRatePanel().getTextLabel());
 		
 	}
 

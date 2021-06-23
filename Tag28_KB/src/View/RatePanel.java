@@ -1,18 +1,25 @@
 package View;
 
 import java.awt.Color;
-import java.awt.Dimension;
+import java.awt.Font;
 
-import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextPane;
 
-public class RatePanel extends JLabel {
+public class RatePanel extends JPanel {
 
-	RatePanel(){
-		this.add(new JLabel("Das ist ein Test"));
-		
-		this.setSize(new Dimension(635, 120));
+	JTextPane text = new JTextPane();
+	Font font = new Font(Font.MONOSPACED, Font.BOLD,40);
 	
+	RatePanel(){
+		text.setEditable(false);
+		text.setOpaque(false);
+		text.setFont(font);
+		text.setText("ULTIMATE HANGMAN");
+		this.setBackground(Color.LIGHT_GRAY);
+		this.add(text);
 		
 	}
+	
 	
 }

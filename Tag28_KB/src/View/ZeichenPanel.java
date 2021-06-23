@@ -1,5 +1,7 @@
 package View;
 
-public class ZeichenPanel extends RatePanel{
+import javax.swing.JPanel;
+
+public class ZeichenPanel extends JPanel{
 
 }

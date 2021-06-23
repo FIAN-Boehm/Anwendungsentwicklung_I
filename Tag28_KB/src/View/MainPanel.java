@@ -1,8 +1,10 @@
 package View;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 
 import javax.swing.BoxLayout;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class MainPanel extends JPanel {
@@ -16,11 +18,10 @@ public class MainPanel extends JPanel {
 	}
 
 	private void init() {
-		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		this.add(ratePanel);
-		this.add(zeichenPanel);
-		this.add(bbox);
-
+		this.setLayout(new BorderLayout());
+		this.add(ratePanel, BorderLayout.NORTH);
+		this.add(zeichenPanel, BorderLayout.CENTER);
+		this.add(bbox, BorderLayout.SOUTH);
 	}
 
 	@Override
@@ -28,11 +29,11 @@ public class MainPanel extends JPanel {
 		return "MainPanel [zeichenPanel=" + zeichenPanel + ", ratePanel=" + ratePanel + ", bbox=" + bbox + "]";
 	}
 
-	public ZeichenPanel getzeichenPanel() {
+	public ZeichenPanel getZeichenPanel() {
 		return zeichenPanel;
 	}
 
-	public RatePanel getratePanel() {
+	public RatePanel getRatePanel() {
 		return ratePanel;
 	}
 

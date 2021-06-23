@@ -17,7 +17,7 @@ public class Woerter {
 	public Woerter() {
 
 		ladeWoerter(sf.getInitialFile());
-
+		wortAussuchen();
 	}
 
 
