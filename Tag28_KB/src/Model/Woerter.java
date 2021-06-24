@@ -10,9 +10,10 @@ import java.util.Scanner;
 
 public class Woerter {
 
-	private ArrayList<String> rateWoerterListe;
+	private ArrayList<String> rateWoerterListe, zielWortChars, rateBild;
 	private String zielWort;
 	private SaveFiles sf = new SaveFiles();
+	private int fehlversuche = 0;
 
 	public Woerter() {
 
@@ -20,32 +21,50 @@ public class Woerter {
 		wortAussuchen();
 	}
 
-
 	@Override
 	public String toString() {
 		return "Woerter [rateWoerterListe=" + rateWoerterListe + ", zielWort=" + zielWort + ", sf=" + sf + "]";
 	}
 
+	public ArrayList<String> getZielWortChars() {
+		return zielWortChars;
+	}
+
+	public void setZielWortChars(ArrayList<String> zielWortChars) {
+		this.zielWortChars = zielWortChars;
+	}
+
+	public ArrayList<String> getRateBild() {
+		return rateBild;
+	}
+
+	public void setRateBild(ArrayList<String> rateBild) {
+		this.rateBild = rateBild;
+	}
+
+	public int getFehlversuche() {
+		return fehlversuche;
+	}
+
+	public void setFehlversuche(int fehlversuche) {
+		this.fehlversuche = fehlversuche;
+	}
 
 	public String getZielWort() {
 		return zielWort;
 	}
 
-
 	public void setZielWort(String zielWort) {
 		this.zielWort = zielWort;
 	}
-
 
 	public SaveFiles getSf() {
 		return sf;
 	}
 
-
 	public void setSf(SaveFiles sf) {
 		this.sf = sf;
 	}
-
 
 	public ArrayList<String> getRateWoerterListe() {
 		return rateWoerterListe;
@@ -123,6 +142,14 @@ public class Woerter {
 	 */
 	public String wortAussuchen() {
 		zielWort = rateWoerterListe.get((int) (Math.random() * rateWoerterListe.size()));
+		System.out.println(zielWort);
+		zielWortChars = new ArrayList<>();
+		rateBild = new ArrayList<>();
+		for (int i = 0; i < zielWort.length(); i++) {
+			zielWortChars.add(Character.toString(zielWort.charAt(i)));
+			rateBild.add("_");
+			System.out.println(rateBild.get(i));
+		}
 		return zielWort;
 	}
 
@@ -135,6 +162,10 @@ public class Woerter {
 	public void entferneGeratenesWort(String wort) {
 		rateWoerterListe.remove(wort);
 	}
+
+	public void pruefeTip(String tip) {
+		
+		}
 	
-	
+
 }
