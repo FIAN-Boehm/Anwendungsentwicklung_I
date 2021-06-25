@@ -24,16 +24,22 @@ public class MyController {
 		frame = new MainFrame();
 		rpm = new RateLabelMaker(frame, woerter);
 		for (int i = 0; i < frame.getMainPanel().getBbox().getTastatur().length; i++) {
-			frame.getMainPanel().getBbox().getTastatur()[i].addActionListener(new CharButtonListener(woerter, frame, rpm));
+			frame.getMainPanel().getBbox().getTastatur()[i]
+					.addActionListener(new CharButtonListener(woerter, frame, rpm));
 		}
 	}
-	
+
 	public void starteSpiel() {
 		rpm.zeichneRatebild();
-		while(!woerter.isGewonnen()) {
-			
+		woerter.setRunning(true);
+		while (woerter.isRunning()) {
+
 		}
-		frame.getMainPanel().getZeichenPanel().zeichneGewonnenBild(woerter);
+		if (woerter.isGewonnen()) {
+			frame.getMainPanel().getZeichenPanel().zeichneGewonnenBild(woerter);
+		}else {
+			frame.getMainPanel().getZeichenPanel().zeichneVerlorenBild(woerter);
+		}
 	}
 
 	public Woerter getWoerter() {

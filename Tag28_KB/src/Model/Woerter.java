@@ -15,7 +15,7 @@ public class Woerter {
 	private String zielWort;
 	private SaveFiles sf = new SaveFiles();
 	private int fehlversuche = 0;
-	boolean gewonnen=false;
+	boolean gewonnen=false, running=false;
 
 	public Woerter() {
 
@@ -26,6 +26,14 @@ public class Woerter {
 	@Override
 	public String toString() {
 		return "Woerter [rateWoerterListe=" + rateWoerterListe + ", zielWort=" + zielWort + ", sf=" + sf + "]";
+	}
+
+	public boolean isRunning() {
+		return running;
+	}
+
+	public void setRunning(boolean running) {
+		this.running = running;
 	}
 
 	public boolean isGewonnen() {
@@ -187,6 +195,12 @@ public class Woerter {
 		if(!treffer) {
 			fehlversuche+=1;
 		}
+		if(fehlversuche==5) {
+			running=false;
+		}
+		System.out.println(fehlversuche);
+		System.out.println(running);
+		
 	}
 
 }
