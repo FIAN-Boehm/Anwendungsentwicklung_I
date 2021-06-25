@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Woerter {
@@ -14,6 +15,7 @@ public class Woerter {
 	private String zielWort;
 	private SaveFiles sf = new SaveFiles();
 	private int fehlversuche = 0;
+	boolean gewonnen=false;
 
 	public Woerter() {
 
@@ -24,6 +26,14 @@ public class Woerter {
 	@Override
 	public String toString() {
 		return "Woerter [rateWoerterListe=" + rateWoerterListe + ", zielWort=" + zielWort + ", sf=" + sf + "]";
+	}
+
+	public boolean isGewonnen() {
+		return gewonnen;
+	}
+
+	public void setGewonnen(boolean gewonnen) {
+		this.gewonnen = gewonnen;
 	}
 
 	public ArrayList<String> getZielWortChars() {
@@ -164,8 +174,19 @@ public class Woerter {
 	}
 
 	public void pruefeTip(String tip) {
-		
+		String tmp = "";
+		boolean treffer = false;
+		for (int i = 0; i < zielWortChars.size(); i++) {
+			if (zielWortChars.get(i).equalsIgnoreCase(tip)) {
+				rateBild.set(i, tip);
+				treffer = zielWortChars.get(i).equalsIgnoreCase(tip);				
+			}
+			tmp = tmp + rateBild.get(i);
+			gewonnen = !tmp.contains("_");
 		}
-	
+		if(!treffer) {
+			fehlversuche+=1;
+		}
+	}
 
 }

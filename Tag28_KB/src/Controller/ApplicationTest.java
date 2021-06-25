@@ -21,7 +21,7 @@ public class ApplicationTest {
 		
 		MyController mc = new MyController();
 		mc.run();
-		mc.getRpm().zeichneRatebild();
+//		mc.starteSpiel();
 		
 	}
 

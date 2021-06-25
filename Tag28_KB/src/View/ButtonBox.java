@@ -15,6 +15,22 @@ public class ButtonBox extends JPanel{
 		
 	}
 	
+	public JButton[] getTastatur() {
+		return tastatur;
+	}
+
+	public void setTastatur(JButton[] tastatur) {
+		this.tastatur = tastatur;
+	}
+
+	public char getTaste() {
+		return taste;
+	}
+
+	public void setTaste(char taste) {
+		this.taste = taste;
+	}
+
 	private void machTasten() {
 		tastatur = new JButton[26];
 		for(int i=0; i<=25; i++) {

@@ -22,9 +22,11 @@ public class RateLabelMaker {
 		
 		String tmp = "";
 		for (String string : woerter.getRateBild()) {
-			tmp=tmp+string;
+			tmp=tmp+string+" ";
 		}
 		frame.getMainPanel().getRatePanel().getText().setText(tmp);		
 	}
+	
+	
 	
 }
