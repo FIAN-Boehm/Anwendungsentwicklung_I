@@ -1,7 +1,9 @@
 package Model;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class SaveFiles {
 	
@@ -51,6 +53,31 @@ public class SaveFiles {
 
 	public void setPathString(String pathString) {
 		this.pathString = pathString;
+	}
+	
+	public static String ladeStartBildschirm() {
+		Scanner sc = null;
+		String tmp="";
+		try {
+			sc = new Scanner(new File ("src/Saves/Willkommen.txt"));
+		} catch (FileNotFoundException e) {
+			// to do
+			// pop up mit fehlermeldung
+			
+			System.out.println("Datei konnte nicht gefunden werden.");
+			e.printStackTrace();
+			
+		}
+		
+		while (sc != null && sc.hasNext()) {
+			tmp = tmp+sc.nextLine()+System.lineSeparator();
+			
+			
+		}
+		if (sc != null)
+			sc.close();
+		System.out.println(tmp);
+		return tmp;
 	}
 	
 

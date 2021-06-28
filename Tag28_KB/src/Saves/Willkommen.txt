@@ -1,0 +1,11 @@
+Willkommen zu Ultimate Hangman!
+Ziel des Spiels ist es, das Wort zu erraten,
+dass Du in der obersten Zeile als gestrichelte Linie siehst.
+Für jeden Fehlversuch wird ein Strich am Galgenmänchen gezeichnet.
+Ist der Galgen komplett hast Du das Spiel verloren!
+
+Starte das Spiel über das Menü!
+
+Du kannst im Menü auch Dein Themengebiet auswählen.
+
+Viel Spaß!

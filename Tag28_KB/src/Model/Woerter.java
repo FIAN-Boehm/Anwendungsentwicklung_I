@@ -152,6 +152,8 @@ public class Woerter {
 		if (sc != null)
 			sc.close();
 	}
+	
+	
 
 	/**
 	 * Wählt mit Hilfe einer pseudozufälligen Zahl ein Wort aus der Liste aus

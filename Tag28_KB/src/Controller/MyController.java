@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+import Model.SaveFiles;
 import Model.Woerter;
 import View.MainFrame;
 
@@ -27,6 +28,8 @@ public class MyController {
 			frame.getMainPanel().getBbox().getTastatur()[i]
 					.addActionListener(new CharButtonListener(woerter, frame, rpm));
 		}
+		frame.getMnbMain().getComponent(0).add
+		frame.getMainPanel().getZeichenPanel().zeichneStartBild();
 	}
 
 	public void starteSpiel() {

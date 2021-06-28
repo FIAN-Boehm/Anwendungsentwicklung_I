@@ -8,14 +8,25 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
+import Model.SaveFiles;
 import Model.Woerter;
 
 public class ZeichenPanel extends JPanel{
 	Font font = new Font(Font.MONOSPACED, Font.BOLD,30);
 	JTextPane text;
 	
+	
 	public void zeichneStartBild() {
+		this.add(text= new JTextPane());
 		
+		Font startFont=new Font(Font.MONOSPACED, Font.BOLD,15);
+		
+		text.setFont(startFont);
+		
+		text.setText(String.format(SaveFiles.ladeStartBildschirm()));
+		text.setLocation(this.getWidth()/2, this.getHeight()/2);
+		text.setOpaque(false);
+		repaint();
 	}
 	
 	//view der gezeigt wird wenn gewonnen wurde

@@ -30,6 +30,24 @@ public class MainFrame extends JFrame {
 
 	
 
+	public JMenuBar getMnbMain() {
+		return mnbMain;
+	}
+
+
+
+	public void setMnbMain(JMenuBar mnbMain) {
+		this.mnbMain = mnbMain;
+	}
+
+
+
+	public void setMainPanel(MainPanel mainPanel) {
+		this.mainPanel = mainPanel;
+	}
+
+
+
 	public MainPanel getMainPanel() {
 		return this.mainPanel;
 	}
