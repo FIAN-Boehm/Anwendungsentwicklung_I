@@ -6,6 +6,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+import javax.swing.JMenuItem;
+
 import Model.SaveFiles;
 import Model.Woerter;
 import View.MainFrame;
@@ -15,6 +17,7 @@ public class MyController {
 	private Woerter woerter;
 	private MainFrame frame;
 	private RateLabelMaker rpm;
+
 
 	MyController() {
 
@@ -28,7 +31,7 @@ public class MyController {
 			frame.getMainPanel().getBbox().getTastatur()[i]
 					.addActionListener(new CharButtonListener(woerter, frame, rpm));
 		}
-		frame.getMnbMain().getComponent(0).add
+		((JMenuItem) frame.getMnbMain().getMenu(0).getMenuComponent(0)).addActionListener(new MenueStartItemListenener(this));
 		frame.getMainPanel().getZeichenPanel().zeichneStartBild();
 	}
 

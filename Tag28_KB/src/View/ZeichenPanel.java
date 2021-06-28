@@ -17,6 +17,7 @@ public class ZeichenPanel extends JPanel{
 	
 	
 	public void zeichneStartBild() {
+		
 		this.add(text= new JTextPane());
 		
 		Font startFont=new Font(Font.MONOSPACED, Font.BOLD,15);

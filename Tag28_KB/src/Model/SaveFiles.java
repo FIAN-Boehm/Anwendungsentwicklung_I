@@ -76,7 +76,7 @@ public class SaveFiles {
 		}
 		if (sc != null)
 			sc.close();
-		System.out.println(tmp);
+		
 		return tmp;
 	}
 	
