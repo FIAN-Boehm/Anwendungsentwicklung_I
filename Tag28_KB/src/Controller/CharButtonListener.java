@@ -12,9 +12,9 @@ public class CharButtonListener implements ActionListener {
 
 	private Woerter woerter;
 	private MainFrame frame;
-	private RateLabelMaker rpm;
+	private RatePanelMaker rpm;
 
-	CharButtonListener(Woerter woerter, MainFrame frame, RateLabelMaker rpm) {
+	CharButtonListener(Woerter woerter, MainFrame frame, RatePanelMaker rpm) {
 		this.woerter = woerter;
 		this.frame = frame;
 		this.rpm = rpm;

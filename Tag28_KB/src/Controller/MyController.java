@@ -16,7 +16,7 @@ public class MyController {
 
 	private Woerter woerter;
 	private MainFrame frame;
-	private RateLabelMaker rpm;
+	private RatePanelMaker rpm;
 
 
 	MyController() {
@@ -26,7 +26,7 @@ public class MyController {
 	public void run() {
 		woerter = new Woerter();
 		frame = new MainFrame();
-		rpm = new RateLabelMaker(frame, woerter);
+		rpm = new RatePanelMaker(frame, woerter);
 		for (int i = 0; i < frame.getMainPanel().getBbox().getTastatur().length; i++) {
 			frame.getMainPanel().getBbox().getTastatur()[i]
 					.addActionListener(new CharButtonListener(woerter, frame, rpm));
@@ -64,11 +64,11 @@ public class MyController {
 		this.frame = frame;
 	}
 
-	public RateLabelMaker getRpm() {
+	public RatePanelMaker getRpm() {
 		return rpm;
 	}
 
-	public void setRpm(RateLabelMaker rpm) {
+	public void setRpm(RatePanelMaker rpm) {
 		this.rpm = rpm;
 	}
 

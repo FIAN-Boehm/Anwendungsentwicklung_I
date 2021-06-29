@@ -7,12 +7,12 @@ import javax.swing.JLabel;
 import Model.Woerter;
 import View.MainFrame;
 
-public class RateLabelMaker {
+public class RatePanelMaker {
 	
 	private Woerter woerter;
 	private MainFrame frame;
 	
-	public RateLabelMaker(MainFrame frame, Woerter woerter) {
+	public RatePanelMaker(MainFrame frame, Woerter woerter) {
 		this.frame=frame;
 		this.woerter=woerter;
 	}
