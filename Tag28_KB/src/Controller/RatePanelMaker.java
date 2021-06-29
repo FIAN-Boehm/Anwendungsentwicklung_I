@@ -24,7 +24,8 @@ public class RatePanelMaker {
 		for (String string : woerter.getRateBild()) {
 			tmp=tmp+string+" ";
 		}
-		frame.getMainPanel().getRatePanel().getText().setText(tmp);		
+		frame.getMainPanel().getRatePanel().getText().setText(tmp);
+		frame.getMainPanel().getRatePanel().repaint();
 	}
 	
 	

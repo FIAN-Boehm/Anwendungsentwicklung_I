@@ -34,14 +34,17 @@ public class ZeichenPanel extends JPanel{
 	public void zeichneGewonnenBild(Woerter fehlversuche) {
 //		this.setLayout(new BorderLayout());
 		this.setBackground(Color.GREEN);
-		
+		text.repaint();
 //		this.add(text= new JTextPane(), BorderLayout.CENTER);
 		this.add(text= new JTextPane());
 		text.setFont(font);
 		
 		text.setText(String.format("Du hast das Spiel gewonnen!!!\nFehlversuche: "+fehlversuche.getFehlversuche()));
+		
 		text.setLocation(this.getWidth()/2, this.getHeight()/2);
+		
 		text.setOpaque(false);
+		
 		repaint();
 	}
 	

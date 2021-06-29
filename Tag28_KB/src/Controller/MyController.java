@@ -17,7 +17,7 @@ public class MyController {
 	private Woerter woerter;
 	private MainFrame frame;
 	private RatePanelMaker rpm;
-
+	
 
 	MyController() {
 
@@ -31,12 +31,14 @@ public class MyController {
 			frame.getMainPanel().getBbox().getTastatur()[i]
 					.addActionListener(new CharButtonListener(woerter, frame, rpm));
 		}
-		((JMenuItem) frame.getMnbMain().getMenu(0).getMenuComponent(0)).addActionListener(new MenueStartItemListenener(this));
+		((JMenuItem) frame.getMnbMain().getMenu(0).getMenuComponent(0)).addActionListener(MenueStartItemListenener.getInstance());
 		frame.getMainPanel().getZeichenPanel().zeichneStartBild();
 	}
 
 	public void starteSpiel() {
+		
 		rpm.zeichneRatebild();
+		
 		woerter.setRunning(true);
 		while (woerter.isRunning()) {
 
