@@ -39,15 +39,24 @@ public class MyController {
 		
 		rpm.zeichneRatebild();
 		
-		woerter.setRunning(true);
-		while (woerter.isRunning()) {
+		// Neues Thread-Object anlegen
+		Thread t1 = new Thread(
+				// Anymone Methode - Was soll gemacht werden während der Thread ausgeführt wird
+				() -> { 
+					woerter.setRunning(true);
+					while (woerter.isRunning()) {
 
-		}
-		if (woerter.isGewonnen()) {
-			frame.getMainPanel().getZeichenPanel().zeichneGewonnenBild(woerter);
-		}else {
-			frame.getMainPanel().getZeichenPanel().zeichneVerlorenBild(woerter);
-		}
+					}
+					if (woerter.isGewonnen()) {
+						frame.getMainPanel().getZeichenPanel().zeichneGewonnenBild(woerter);
+					}else {
+						frame.getMainPanel().getZeichenPanel().zeichneVerlorenBild(woerter);
+					}
+				}
+		);
+		
+		// Thread starten
+		t1.start();
 	}
 
 	public Woerter getWoerter() {

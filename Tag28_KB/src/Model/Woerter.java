@@ -15,7 +15,7 @@ public class Woerter {
 	private String zielWort;
 	private SaveFiles sf = new SaveFiles();
 	private int fehlversuche = 0;
-	boolean gewonnen=false, running=false;
+	private boolean gewonnen=false, running=false;
 
 	public Woerter() {
 
@@ -193,13 +193,14 @@ public class Woerter {
 			}
 			tmp = tmp + rateBild.get(i);
 			gewonnen = !tmp.contains("_");
+			if(fehlversuche==5) {
+				running=false;
+			}
 		}
 		if(!treffer) {
 			fehlversuche+=1;
 		}
-		if(fehlversuche==5) {
-			running=false;
-		}
+		
 		System.out.println(fehlversuche);
 		System.out.println(running);
 		
