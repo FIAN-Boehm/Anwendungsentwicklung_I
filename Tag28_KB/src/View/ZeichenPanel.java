@@ -46,13 +46,7 @@ public class ZeichenPanel extends JPanel {
 
 	}
 
-	public void zeichneGalgen() {
-		
-		this.remove(text);
-		this.add(new StrichmannPanel());
-		this.repaint();
 	
-	}
 
 	// view der gezeigt wird wenn gewonnen wurde
 	public void zeichneVerlorenBild(Woerter fehlversuche) {
@@ -65,5 +59,5 @@ public class ZeichenPanel extends JPanel {
 		text.setOpaque(false);
 		repaint();
 	}
-
+	
 }

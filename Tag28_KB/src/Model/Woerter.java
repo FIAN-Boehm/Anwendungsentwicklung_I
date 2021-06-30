@@ -1,5 +1,7 @@
 package Model;
 
+import java.awt.Color;
+import java.awt.Graphics;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -168,7 +170,7 @@ public class Woerter {
 		for (int i = 0; i < zielWort.length(); i++) {
 			zielWortChars.add(Character.toString(zielWort.charAt(i)));
 			rateBild.add("_");
-			System.out.println(rateBild.get(i));
+			
 		}
 		return zielWort;
 	}
@@ -193,7 +195,7 @@ public class Woerter {
 			}
 			tmp = tmp + rateBild.get(i);
 			gewonnen = !tmp.contains("_");
-			if(fehlversuche==5) {
+			if(fehlversuche==11&&treffer==false) {
 				running=false;
 			}
 		}
@@ -205,5 +207,6 @@ public class Woerter {
 		System.out.println(running);
 		
 	}
+	
 
 }

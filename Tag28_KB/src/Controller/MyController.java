@@ -11,6 +11,8 @@ import javax.swing.JMenuItem;
 import Model.SaveFiles;
 import Model.Woerter;
 import View.MainFrame;
+import View.StrichmannPanel;
+import View.ZeichenPanel;
 
 public class MyController {
 
@@ -38,19 +40,30 @@ public class MyController {
 	public void starteSpiel() {
 		
 		rpm.zeichneRatebild();
-		frame.getMainPanel().getZeichenPanel().zeichneGalgen();
+		frame.getMainPanel().zeichneGalgen(woerter.getFehlversuche());
 		// Neues Thread-Object anlegen
 		Thread t1 = new Thread(
 				// Anymone Methode - Was soll gemacht werden während der Thread ausgeführt wird
 				() -> { 
 					woerter.setRunning(true);
 					while (woerter.isRunning()) {
-
+						frame.getMainPanel().zeichneGalgen(woerter.getFehlversuche());
+						if(woerter.isGewonnen()) {
+							break;
+						}
+						if(!woerter.isRunning()) {
+							break;
+						}
 					}
 					if (woerter.isGewonnen()) {
+						frame.getMainPanel().zeichneGewonnen();
 						frame.getMainPanel().getZeichenPanel().zeichneGewonnenBild(woerter);
+						frame.getMainPanel().repaint();
 					}else {
+						frame.getMainPanel().zeichneVerloren();
 						frame.getMainPanel().getZeichenPanel().zeichneVerlorenBild(woerter);
+						frame.getMainPanel().repaint();
+						
 					}
 				}
 		);
