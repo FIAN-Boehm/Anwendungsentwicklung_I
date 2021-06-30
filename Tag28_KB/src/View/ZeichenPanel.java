@@ -3,6 +3,7 @@ package View;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -46,8 +47,11 @@ public class ZeichenPanel extends JPanel {
 	}
 
 	public void zeichneGalgen() {
-		// to do
-		// Galgen zeichnen in Schritten switch case zur auswahl der Stufe
+		
+		this.remove(text);
+		this.add(new StrichmannPanel());
+		this.repaint();
+	
 	}
 
 	// view der gezeigt wird wenn gewonnen wurde

@@ -38,7 +38,7 @@ public class MyController {
 	public void starteSpiel() {
 		
 		rpm.zeichneRatebild();
-		
+		frame.getMainPanel().getZeichenPanel().zeichneGalgen();
 		// Neues Thread-Object anlegen
 		Thread t1 = new Thread(
 				// Anymone Methode - Was soll gemacht werden während der Thread ausgeführt wird
