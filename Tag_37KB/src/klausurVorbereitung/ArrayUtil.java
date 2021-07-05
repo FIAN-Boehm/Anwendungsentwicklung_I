@@ -45,11 +45,11 @@ public class ArrayUtil {
 	// aufgabe 2
 	public static int searchIndex(int[] a, int value) {
 		int matchIndex = -1;
-		if (value < a.length) {
+		 
 			for (int i = 0; i < a.length; i++) {
 				if (a[i] == value) {
 					matchIndex = i;
-				}
+		
 			}
 		}
 		return matchIndex;
