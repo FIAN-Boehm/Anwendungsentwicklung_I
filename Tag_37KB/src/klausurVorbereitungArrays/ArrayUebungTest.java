@@ -1,4 +1,4 @@
-package klausurVorbereitung;
+package klausurVorbereitungArrays;
 
 import java.util.Arrays;
 

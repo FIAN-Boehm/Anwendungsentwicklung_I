@@ -1,4 +1,4 @@
-package klausurVorbereitung;
+package klausurVorbereitungArrays;
 
 public class PrintHelper {
 
