@@ -43,7 +43,7 @@ public class MyController {
 		frame.getMainPanel().zeichneGalgen(woerter.getFehlversuche());
 		// Neues Thread-Object anlegen
 		Thread t1 = new Thread(
-				// Anymone Methode - Was soll gemacht werden während der Thread ausgeführt wird
+				// Anomyne Methode - Was soll gemacht werden während der Thread ausgeführt wird
 				() -> { 
 					woerter.setRunning(true);
 					while (woerter.isRunning()) {
