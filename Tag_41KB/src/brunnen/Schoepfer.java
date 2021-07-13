@@ -32,7 +32,7 @@ public class Schoepfer extends Thread {
 			}
 			if (super.getName().equals("pumpe")) {
 
-				int wassermenge = (int) (Math.random() * 11);
+				int wassermenge = (int) (Math.random() * 21);
 				Ziehbrunnen.setWassertrog(Ziehbrunnen.getWassertrog() + wassermenge);
 				System.out.println(wassermenge + " Liter reingepumt");
 				System.out.println(Ziehbrunnen.getWassertrog() + " Liter sind im Brunnen.\n");
