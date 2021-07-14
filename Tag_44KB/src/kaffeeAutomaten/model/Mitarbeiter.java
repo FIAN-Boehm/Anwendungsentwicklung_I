@@ -24,7 +24,7 @@ public class Mitarbeiter implements Runnable {
 		}
 		hatBockAufKaffee=true;
 		while(hatBockAufKaffee) {
-			Pausenraum.get
+			pr.getAutomaten()[0].i;
 		}
 	}
 
