@@ -13,39 +13,41 @@ public class Woerter {
 	private ArrayList<String> rateWoerterListe;
 	private String zielWort;
 	private SaveFiles sf = new SaveFiles();
+	private char[] characters;
 
 	public Woerter() {
-
 		ladeWoerter(sf.getInitialFile());
-
 	}
-
 
 	@Override
 	public String toString() {
-		return "Woerter [rateWoerterListe=" + rateWoerterListe + ", zielWort=" + zielWort + ", sf=" + sf + "]";
+		return "Woerter [rateWoerterListe=" + rateWoerterListe + ", zielWort=" + zielWort + ", sf=" + sf
+				+ ", characters=" + Arrays.toString(characters) + "]";
 	}
 
+	public char[] getCharacters() {
+		return characters;
+	}
+
+	public void setCharacters(char[] characters) {
+		this.characters = characters;
+	}
 
 	public String getZielWort() {
 		return zielWort;
 	}
 
-
 	public void setZielWort(String zielWort) {
 		this.zielWort = zielWort;
 	}
-
 
 	public SaveFiles getSf() {
 		return sf;
 	}
 
-
 	public void setSf(SaveFiles sf) {
 		this.sf = sf;
 	}
-
 
 	public ArrayList<String> getRateWoerterListe() {
 		return rateWoerterListe;
@@ -134,5 +136,12 @@ public class Woerter {
 	 */
 	public void entferneGeratenesWort(String wort) {
 		rateWoerterListe.remove(wort);
+	}
+
+	public void zerlegeZielWort() {
+		characters = new char[zielWort.length()];
+		for (int i = 0; i < zielWort.length(); i++) {
+			characters[i] = zielWort.charAt(i);
+		}
 	}
 }
