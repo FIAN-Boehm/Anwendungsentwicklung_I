@@ -2,17 +2,15 @@ package kaffeeAutomaten.model;
 
 import kaffeeAutomaten.controller.Pausenraum;
 
-public class KaffeeAutomat implements Runnable {
+public class KaffeeAutomat extends Thread {
 
 	private final int TANKGROESSE = 5000;
 	private int fuellstand;
 	private boolean isBereit;
-	private String name;
 	private Pausenraum pr;
 	
 	public KaffeeAutomat(String name, Pausenraum pr) {
-		super();
-		this.name = name;
+		super(name);
 		this.pr = pr;
 	}
 
@@ -32,13 +30,6 @@ public class KaffeeAutomat implements Runnable {
 		this.isBereit = isBereit;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
 
 	public Pausenraum getPr() {
 		return pr;

@@ -7,7 +7,7 @@ public class Pausenraum {
 
 
 	private Thread team [];
-	private Thread automaten [] = new Thread [5];
+	private KaffeeAutomat automaten [] = new KaffeeAutomat [5];
 	
 	
 	public Pausenraum() {
@@ -18,7 +18,7 @@ public class Pausenraum {
 		}
 		
 		for (int i = 0; i < automaten.length; i++) {
-			automaten[i]= new Thread(new KaffeeAutomat(Integer.toString(i), this));
+			automaten[i]= new KaffeeAutomat(Integer.toString(i), this);
 		}
 	}
 
