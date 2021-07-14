@@ -23,5 +23,11 @@ public class Ausgaben {
 		System.out.println(string);
 		return string;
 	}
+
+	public static String maschineBesetzt(KaffeeAutomat kaffeeAutomat) {
+		String string=String.format("Maschine Nummer %s ist nicht bereit. Probiere nächste Maschine.",kaffeeAutomat.getName());
+		System.out.println(string);
+		return string;
+	}
 	
 }

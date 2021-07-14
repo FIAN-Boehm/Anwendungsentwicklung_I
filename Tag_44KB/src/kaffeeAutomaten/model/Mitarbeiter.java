@@ -41,20 +41,23 @@ public class Mitarbeiter implements Runnable {
 
 	@Override
 	public void run() {
-		while(true) {
+		while (true) {
 			try {
 				Thread.sleep(warteZeit());
-				Ausgaben.mitarbeiterHatBockAufKaffee(this);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			hatBockAufKaffee=true;
-			while(hatBockAufKaffee) {
-				for (int i = 0; i < pr.getAutomaten().length; i++) {
-					if(pr.getAutomaten()[i].isBereit()) {
+			Ausgaben.mitarbeiterHatBockAufKaffee(this);
+			hatBockAufKaffee = true;
+			while (hatBockAufKaffee) {
+				inner : for (int i = 0; i < pr.getAutomaten().length; i++) {
+					if (pr.getAutomaten()[i].isBereit()) {
 						pr.getAutomaten()[i].machKaffee(kaffeeTasse());
-						hatBockAufKaffee=false;
+						hatBockAufKaffee = false;
+						break inner;
+					}else {
+						Ausgaben.maschineBesetzt(pr.getAutomaten()[i]);
 					}
 				}
 			}
@@ -62,24 +65,28 @@ public class Mitarbeiter implements Runnable {
 	}
 
 	private int warteZeit() {
-		return (((int) (10 + (Math.random() * 21))*1000));
+		return (((int) (10 + (Math.random() * 21)) * 1000));
 	}
-	
+
 	private Tassen kaffeeTasse() {
-		int tmp = ((int) Math.random()*3);
+		int tmp = ((int) (Math.random()*3));
 		Tassen tasse;
 		switch (tmp) {
-		case 0: tasse= Tassen.KLEIN;
-			
+		case 0:
+			tasse = Tassen.KLEIN;
+
 			break;
-		case 1: tasse = Tassen.MITTEL;
-			
+		case 1:
+			tasse = Tassen.MITTEL;
+
 			break;
-		case 2: tasse = Tassen.GROSS;
-			
+		case 2:
+			tasse = Tassen.GROSS;
+
 			break;
 
-		default: tasse = Tassen.MITTEL;
+		default:
+			tasse = Tassen.MITTEL;
 			break;
 		}
 		return tasse;

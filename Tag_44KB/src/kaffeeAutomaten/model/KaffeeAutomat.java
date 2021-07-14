@@ -14,6 +14,7 @@ public class KaffeeAutomat extends Thread {
 		super(name);
 		this.pr = pr;
 		this.fuellstand = TANKGROESSE;
+		this.isBereit= true;
 
 	}
 
