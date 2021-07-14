@@ -24,6 +24,7 @@ public class Pizzaiolo extends Thread {
 				System.err.println("Exception");
 			}
 			++nummer;
+			
 			System.out.println("Pizza " + nummer + " bestellt");
 
 			// Pizza zubereiten und ausliefern

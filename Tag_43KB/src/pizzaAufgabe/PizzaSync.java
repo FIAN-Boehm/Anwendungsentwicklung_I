@@ -4,7 +4,13 @@ public class PizzaSync {
 	
 	Kurier kurier;
 	Pizzaiolo pizzaiolo;
+	private int pizzaNr;
 	
+	public int getPizzaNr() {
+		return pizzaNr;
+	}
+
+
 	public PizzaSync(Kurier kurier, Pizzaiolo pizzaiolo) {
 		super();
 		this.kurier = kurier;
@@ -31,7 +37,7 @@ public class PizzaSync {
 	 * blockiert, wenn keine Pizza bereit
 	 */
 	public synchronized int getPizza() {
-		return 0;
+		return pizzaNr;
 		
 	}
 
