@@ -20,11 +20,11 @@ import kaffeeAutomaten.controller.Pausenraum;
 public class MainPanel extends JPanel {
 
 	
-	private JButton startKnopf = new JButton("Simulation Starten");
+	
 	private Pausenraum pr;
 	private MainFrame mf;
 	private JLabel maschinenNr [];
-	private JTextPane txtFelder[];
+	private MyJTextPanel txtFelder[];
 	
 	
 	public MainPanel(Pausenraum pr, MainFrame mf) {
@@ -36,22 +36,20 @@ public class MainPanel extends JPanel {
 
 	private void init() {
 		
-		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		maschinenNr = new JLabel[5];
-		txtFelder = new JTextPane[5];
-		for (int i = 0; i < maschinenNr.length; i++) {
-			maschinenNr[i] = new JLabel(pr.getAutomaten()[i].getName());
-			this.add(maschinenNr[i]);
-			txtFelder[i]= new JTextPane();
-			txtFelder[i].setPreferredSize(new Dimension(150,150));
-			txtFelder[i].setName(pr.getAutomaten()[i].getName());
+		
+		txtFelder = new MyJTextPanel[5];
+		for (int i = 0; i < txtFelder.length; i++) {
+
+			txtFelder[i]= new MyJTextPanel(pr.getAutomaten()[i].getName());
+
 			txtFelder[i].setBorder(BorderFactory.createEtchedBorder());
 			this.add(txtFelder[i]);
+			
+			
 		}
 		
 		
-		startKnopf.addActionListener(new StartKnopfListener());
-		this.add(startKnopf);
+		
 	}
 	
 	
@@ -72,21 +70,15 @@ public class MainPanel extends JPanel {
 		this.maschinenNr = maschinenNr;
 	}
 
-	public JTextPane[] getTxtFelder() {
+	public MyJTextPanel[] getTxtFelder() {
 		return txtFelder;
 	}
 
-	public void setTxtFelder(JTextPane[] txtFelder) {
+	public void setTxtFelder(MyJTextPanel[] txtFelder) {
 		this.txtFelder = txtFelder;
 	}
 
-	public JButton getStartKnopf() {
-		return startKnopf;
-	}
-
-	public void setStartKnopf(JButton startKnopf) {
-		this.startKnopf = startKnopf;
-	}
+	
 
 	public Pausenraum getPr() {
 		return pr;
@@ -98,15 +90,6 @@ public class MainPanel extends JPanel {
 
 	
 	
-	private class StartKnopfListener implements ActionListener{
-
-		@Override
-		public void actionPerformed(ActionEvent e) {
 	
-			pr.starteSimulation();		
-			
-		}
-		
-	}
 }
 	

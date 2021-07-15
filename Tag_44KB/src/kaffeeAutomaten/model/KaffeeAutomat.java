@@ -76,14 +76,9 @@ public class KaffeeAutomat extends Thread {
 
 	public void machKaffee(Tassen tasse, Mitarbeiter ma) {
 		this.isBereit = false;
-		pr.getMf().getMainPanel().getTxtFelder()[Integer.parseInt(this.getName())].setBackground(Color.YELLOW);
-		fuellstand -= tasse.getMl();
-		verbrauch+=tasse.getMl();
-		tassenVerbrauch++;
-		pr.getMf().getMainPanel().getTxtFelder()[Integer.parseInt(this.getName())].setText(Ausgaben.bereiteKaffeeZu(this, tasse, ma));
 		if (tasse.getMl() > fuellstand) {
 			pr.getMf().getMainPanel().getTxtFelder()[Integer.parseInt(this.getName())].setBackground(Color.RED);
-			pr.getMf().getMainPanel().getTxtFelder()[Integer.parseInt(this.getName())].setText(Ausgaben.fuelleWasserAuf());
+			pr.getMf().getMainPanel().getTxtFelder()[Integer.parseInt(this.getName())].getText().setText(Ausgaben.fuelleWasserAuf());
 			try {
 				Thread.sleep(30000);
 			} catch (InterruptedException e) {
@@ -92,6 +87,12 @@ public class KaffeeAutomat extends Thread {
 			}
 			tankAuffüllen();
 		}
+		pr.getMf().getMainPanel().getTxtFelder()[Integer.parseInt(this.getName())].setBackground(Color.YELLOW);
+		fuellstand -= tasse.getMl();
+		verbrauch+=tasse.getMl();
+		tassenVerbrauch++;
+		pr.getMf().getMainPanel().getTxtFelder()[Integer.parseInt(this.getName())].getText().setText(Ausgaben.bereiteKaffeeZu(this, tasse, ma));
+		
 		try {
 			Thread.sleep(tasse.getMl() * 10);
 		} catch (InterruptedException e) {

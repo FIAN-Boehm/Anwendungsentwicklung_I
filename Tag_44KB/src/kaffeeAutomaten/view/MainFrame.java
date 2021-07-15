@@ -1,6 +1,8 @@
 package kaffeeAutomaten.view;
 
 
+import java.awt.BorderLayout;
+
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 
@@ -13,17 +15,23 @@ public class MainFrame extends JFrame {
 	private MainPanel mainPanel;
 	private JMenuBar mnbMain;
 	private Pausenraum pr;
+	private SouthPanel sp;
 
 	public MainFrame(Pausenraum pr) {
 		super();
 		this.pr=pr;
 		mainPanel = new MainPanel(pr,this);
 		mnbMain = new MyMenuBar();
+		sp= new SouthPanel(pr, this);
+		
 		this.setResizable(false);
 //		this.setLocation(-1000, 50);
 		this.setLocationRelativeTo(null);
-		this.setSize(860, 480);
-		this.setContentPane(mainPanel);
+		this.setSize(1000, 480);
+		this.add(sp, BorderLayout.SOUTH);
+		this.add(mainPanel, BorderLayout.CENTER);
+		this.add(new HeaderPanel(),BorderLayout.NORTH);
+//		this.add(new MyJTextPanel("Mitarbeiter"), BorderLayout.SOUTH);
 		this.setJMenuBar(mnbMain);
 		this.setTitle("Kaffee Junkies");
 		this.setLocationRelativeTo(null);
