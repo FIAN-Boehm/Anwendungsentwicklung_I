@@ -53,7 +53,7 @@ public class Mitarbeiter implements Runnable {
 			while (hatBockAufKaffee) {
 				inner : for (int i = 0; i < pr.getAutomaten().length; i++) {
 					if (pr.getAutomaten()[i].isBereit()) {
-						pr.getAutomaten()[i].machKaffee(kaffeeTasse());
+						pr.getAutomaten()[i].machKaffee(kaffeeTasse(), this);
 						hatBockAufKaffee = false;
 						break inner;
 					}else {

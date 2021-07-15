@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
 
-public class ZeichenPanel extends JPanel {
+public class StartPanel extends JPanel {
 	Font font = new Font(Font.MONOSPACED, Font.BOLD, 30);
 	JTextPane text;
 

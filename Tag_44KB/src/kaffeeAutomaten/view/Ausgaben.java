@@ -5,9 +5,12 @@ import kaffeeAutomaten.model.Mitarbeiter;
 import kaffeeAutomaten.model.Tassen;
 
 public class Ausgaben {
+	
+	
 
-	public static String bereiteKaffeeZu(KaffeeAutomat kANr, Tassen tasse) {
-		String string=String.format("Maschine Nr.: %s bereitet Kaffee zu. Gewählte Tassengröße ist : %dml",kANr.getName(),tasse.getMl());
+	public static String bereiteKaffeeZu(KaffeeAutomat kANr, Tassen tasse, Mitarbeiter ma) {
+		String string=String.format("Maschine Nr.: %s \nMA zieht Kaffe: %s\nTassengröße: %dml\n\nNeuer Füllstand: %dml\nVerbrauch heute: %dml\nTassen gezogen: %d",
+				kANr.getName(),ma.getName(),tasse.getMl(),kANr.getFuellstand(), kANr.getVerbrauch(),kANr.getTassenVerbrauch());
 		System.out.println(string);
 		return string;
 	}

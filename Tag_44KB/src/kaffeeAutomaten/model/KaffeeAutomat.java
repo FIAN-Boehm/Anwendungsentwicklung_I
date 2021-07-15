@@ -1,5 +1,7 @@
 package kaffeeAutomaten.model;
 
+import java.awt.Color;
+
 import kaffeeAutomaten.controller.Pausenraum;
 import kaffeeAutomaten.view.Ausgaben;
 
@@ -9,13 +11,24 @@ public class KaffeeAutomat extends Thread {
 	private int fuellstand;
 	private boolean isBereit;
 	private Pausenraum pr;
+	private int verbrauch;
+	private int tassenVerbrauch;
 
+	
 	public KaffeeAutomat(String name, Pausenraum pr) {
 		super(name);
 		this.pr = pr;
 		this.fuellstand = TANKGROESSE;
 		this.isBereit= true;
 
+	}
+	
+	public int getTassenVerbrauch() {
+		return tassenVerbrauch;
+	}
+
+	public void setTassenVerbrauch(int tassenVerbrauch) {
+		this.tassenVerbrauch = tassenVerbrauch;
 	}
 
 	public int getFuellstand() {
@@ -46,6 +59,14 @@ public class KaffeeAutomat extends Thread {
 		return TANKGROESSE;
 	}
 
+	public int getVerbrauch() {
+		return verbrauch;
+	}
+
+	public void setVerbrauch(int verbrauch) {
+		this.verbrauch = verbrauch;
+	}
+
 	@Override
 	public void run() {
 		while (true) {
@@ -53,12 +74,16 @@ public class KaffeeAutomat extends Thread {
 		}
 	}
 
-	public void machKaffee(Tassen tasse) {
+	public void machKaffee(Tassen tasse, Mitarbeiter ma) {
 		this.isBereit = false;
+		pr.getMf().getMainPanel().getTxtFelder()[Integer.parseInt(this.getName())].setBackground(Color.YELLOW);
 		fuellstand -= tasse.getMl();
-		Ausgaben.bereiteKaffeeZu(this, tasse);
+		verbrauch+=tasse.getMl();
+		tassenVerbrauch++;
+		pr.getMf().getMainPanel().getTxtFelder()[Integer.parseInt(this.getName())].setText(Ausgaben.bereiteKaffeeZu(this, tasse, ma));
 		if (tasse.getMl() > fuellstand) {
-			Ausgaben.fuelleWasserAuf();
+			pr.getMf().getMainPanel().getTxtFelder()[Integer.parseInt(this.getName())].setBackground(Color.RED);
+			pr.getMf().getMainPanel().getTxtFelder()[Integer.parseInt(this.getName())].setText(Ausgaben.fuelleWasserAuf());
 			try {
 				Thread.sleep(30000);
 			} catch (InterruptedException e) {
@@ -74,6 +99,7 @@ public class KaffeeAutomat extends Thread {
 			e.printStackTrace();
 		}
 		this.isBereit = true;
+		pr.getMf().getMainPanel().getTxtFelder()[Integer.parseInt(this.getName())].setBackground(Color.GREEN);
 	}
 
 	private void tankAuffüllen() {

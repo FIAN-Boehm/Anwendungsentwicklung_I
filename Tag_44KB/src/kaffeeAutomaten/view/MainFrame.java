@@ -17,12 +17,12 @@ public class MainFrame extends JFrame {
 	public MainFrame(Pausenraum pr) {
 		super();
 		this.pr=pr;
-		mainPanel = new MainPanel(pr);
+		mainPanel = new MainPanel(pr,this);
 		mnbMain = new MyMenuBar();
 		this.setResizable(false);
 //		this.setLocation(-1000, 50);
 		this.setLocationRelativeTo(null);
-		this.setSize(640, 480);
+		this.setSize(860, 480);
 		this.setContentPane(mainPanel);
 		this.setJMenuBar(mnbMain);
 		this.setTitle("Kaffee Junkies");
