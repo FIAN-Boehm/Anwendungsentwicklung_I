@@ -18,7 +18,7 @@ public class MainPanel extends JPanel {
 	ZeichenPanel zp;
 	JButton startKnopf = new JButton("Simulation Starten");
 	Pausenraum pr;
-	JTextPane maschinenNr [];
+	JLabel maschinenNr [];
 	JTextPane txtFelder[];
 	
 	
@@ -38,11 +38,10 @@ public class MainPanel extends JPanel {
 		this.remove(startKnopf);
 		this.remove(zp);
 		setLayout(new GridLayout(3,5));
-		maschinenNr = new JTextPane[5];
+		maschinenNr = new JLabel[5];
 		txtFelder = new JTextPane[6];
 		for (int i = 0; i < maschinenNr.length; i++) {
-			maschinenNr[i] = new JTextPane();
-			maschinenNr[i].setText(pr.getAutomaten()[i].getName());
+			maschinenNr[i] = new JLabel(pr.getAutomaten()[i].getName());
 			this.add(maschinenNr[i]);
 		}
 		
