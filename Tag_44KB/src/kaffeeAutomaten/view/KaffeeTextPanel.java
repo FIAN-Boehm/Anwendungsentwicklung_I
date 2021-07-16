@@ -28,11 +28,11 @@ public class KaffeeTextPanel extends JPanel {
 		this.add(label = new JLabel(labelTxt));
 		this.add(text = new JTextPane());
 		text.setPreferredSize(dimension);
-		this.add(unterbrechen = new JButton("       Unterbrechen       "));
-		unterbrechen.addActionListener(new Unterbrecher());
+//		this.add(unterbrechen = new JButton("       Unterbrechen       "));
+//		unterbrechen.addActionListener(new Unterbrecher());
 		label.setAlignmentX(JLabel.CENTER_ALIGNMENT);
-		unterbrechen.setAlignmentX(JButton.CENTER_ALIGNMENT);
-		unterbrechen.setName(labelTxt);
+//		unterbrechen.setAlignmentX(JButton.CENTER_ALIGNMENT);
+//		unterbrechen.setName(labelTxt);
 
 	}
 
