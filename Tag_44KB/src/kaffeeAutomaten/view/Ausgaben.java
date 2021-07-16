@@ -9,8 +9,15 @@ public class Ausgaben {
 	
 
 	public static String bereiteKaffeeZu(KaffeeAutomat kANr, Tassen tasse, Mitarbeiter ma) {
-		String string=String.format("Maschine Nr.: %s \nMA zieht Kaffe: %s\nTassengröße: %dml\n\nNeuer Füllstand: %dml\nVerbrauch heute: %dml\nTassen gezogen: %d",
+		String string=String.format("Maschine Nr.: %s\n\nMA zieht Kaffe: %s\nTassengröße: %dml\n\nNeuer Füllstand: %dml\n\nVerbrauch heute: %dml\nTassen gezogen: %d",
 				kANr.getName(),ma.getName(),tasse.getMl(),kANr.getFuellstand(), kANr.getVerbrauch(),kANr.getTassenVerbrauch());
+		System.out.println(string);
+		return string;
+	}
+	
+	public static String startText(KaffeeAutomat kANr) {
+		String string=String.format("Maschine Nr.: %s\n\nMA zieht Kaffe: -\nTassengröße: -\n\nNeuer Füllstand: %dml\n\nVerbrauch heute: %dml\nTassen gezogen: %d",
+				kANr.getName(),kANr.getFuellstand(), kANr.getVerbrauch(),kANr.getTassenVerbrauch());
 		System.out.println(string);
 		return string;
 	}
@@ -29,6 +36,12 @@ public class Ausgaben {
 
 	public static String maschineBesetzt(KaffeeAutomat kaffeeAutomat) {
 		String string=String.format("Maschine Nummer %s ist nicht bereit. Probiere nächste Maschine.",kaffeeAutomat.getName());
+		System.out.println(string);
+		return string;
+	}
+	
+	public static String maschineUnterbrochen(KaffeeAutomat kaffeeAutomat) {
+		String string=String.format("Maschine Nummer %s wurde unterbrochen.",kaffeeAutomat.getName());
 		System.out.println(string);
 		return string;
 	}

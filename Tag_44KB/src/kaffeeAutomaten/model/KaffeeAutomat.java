@@ -20,6 +20,7 @@ public class KaffeeAutomat extends Thread {
 		this.pr = pr;
 		this.fuellstand = TANKGROESSE;
 		this.isBereit= true;
+		
 
 	}
 	
@@ -77,14 +78,6 @@ public class KaffeeAutomat extends Thread {
 	public void machKaffee(Tassen tasse, Mitarbeiter ma) {
 		this.isBereit = false;
 		if (tasse.getMl() > fuellstand) {
-			pr.getMf().getMainPanel().getTxtFelder()[Integer.parseInt(this.getName())].setBackground(Color.RED);
-			pr.getMf().getMainPanel().getTxtFelder()[Integer.parseInt(this.getName())].getText().setText(Ausgaben.fuelleWasserAuf());
-			try {
-				Thread.sleep(30000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 			tankAuffüllen();
 		}
 		pr.getMf().getMainPanel().getTxtFelder()[Integer.parseInt(this.getName())].setBackground(Color.YELLOW);
@@ -103,8 +96,32 @@ public class KaffeeAutomat extends Thread {
 		pr.getMf().getMainPanel().getTxtFelder()[Integer.parseInt(this.getName())].setBackground(Color.GREEN);
 	}
 
+	
 	private void tankAuffüllen() {
+		pr.getMf().getMainPanel().getTxtFelder()[Integer.parseInt(this.getName())].setBackground(Color.RED);
+		pr.getMf().getMainPanel().getTxtFelder()[Integer.parseInt(this.getName())].getText().setText(Ausgaben.fuelleWasserAuf());
+		try {
+			Thread.sleep(30000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		fuellstand = TANKGROESSE;
 	}
+	
+	public void unterbrechen() {
+		this.isBereit = false;
+		pr.getMf().getMainPanel().getTxtFelder()[Integer.parseInt(this.getName())].setBackground(Color.RED);
+		pr.getMf().getMainPanel().getTxtFelder()[Integer.parseInt(this.getName())].getText().setText(Ausgaben.maschineUnterbrochen(this));
+		try {
+			Thread.sleep(30000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		this.isBereit = true;
+	}
+	
+	
 
 }

@@ -48,6 +48,7 @@ public class Mitarbeiter implements Runnable {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			pr.getMf().getSp().getMaText().getMAText().setText(Ausgaben.mitarbeiterHatBockAufKaffee(this));
 			Ausgaben.mitarbeiterHatBockAufKaffee(this);
 			hatBockAufKaffee = true;
 			while (hatBockAufKaffee) {

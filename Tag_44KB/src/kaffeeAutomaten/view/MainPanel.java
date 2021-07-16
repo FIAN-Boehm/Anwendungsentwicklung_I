@@ -24,7 +24,7 @@ public class MainPanel extends JPanel {
 	private Pausenraum pr;
 	private MainFrame mf;
 	private JLabel maschinenNr [];
-	private MyJTextPanel txtFelder[];
+	private KaffeeTextPanel txtFelder[];
 	
 	
 	public MainPanel(Pausenraum pr, MainFrame mf) {
@@ -37,10 +37,10 @@ public class MainPanel extends JPanel {
 	private void init() {
 		
 		
-		txtFelder = new MyJTextPanel[5];
+		txtFelder = new KaffeeTextPanel[5];
 		for (int i = 0; i < txtFelder.length; i++) {
 
-			txtFelder[i]= new MyJTextPanel(pr.getAutomaten()[i].getName());
+			txtFelder[i]= new KaffeeTextPanel(pr.getAutomaten()[i].getName(), pr);
 
 			txtFelder[i].setBorder(BorderFactory.createEtchedBorder());
 			this.add(txtFelder[i]);
@@ -70,11 +70,11 @@ public class MainPanel extends JPanel {
 		this.maschinenNr = maschinenNr;
 	}
 
-	public MyJTextPanel[] getTxtFelder() {
+	public KaffeeTextPanel[] getTxtFelder() {
 		return txtFelder;
 	}
 
-	public void setTxtFelder(MyJTextPanel[] txtFelder) {
+	public void setTxtFelder(KaffeeTextPanel[] txtFelder) {
 		this.txtFelder = txtFelder;
 	}
 

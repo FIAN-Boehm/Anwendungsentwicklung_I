@@ -2,6 +2,7 @@ package kaffeeAutomaten.controller;
 
 import kaffeeAutomaten.model.KaffeeAutomat;
 import kaffeeAutomaten.model.Mitarbeiter;
+import kaffeeAutomaten.view.Ausgaben;
 import kaffeeAutomaten.view.MainFrame;
 
 public class Pausenraum {
@@ -12,6 +13,7 @@ public class Pausenraum {
 
 	public Pausenraum() {
 		super();
+		
 //		team = new Thread[((int) (5 + (Math.random() * 11)))];
 		team = new Thread[10];
 		for (int i = 0; i < team.length; i++) {
@@ -20,9 +22,15 @@ public class Pausenraum {
 
 		for (int i = 0; i < automaten.length; i++) {
 			automaten[i] = new KaffeeAutomat(Integer.toString(i), this);
+			
 		}
 		
-		mf = new MainFrame(this);		
+		mf = new MainFrame(this);	
+		for (int i = 0; i < automaten.length; i++) {
+			mf.getMainPanel().getTxtFelder()[i].getText().setText(Ausgaben.startText(automaten[i]));			
+			
+		}
+		
 	}
 
 	public MainFrame getMf() {

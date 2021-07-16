@@ -64,4 +64,28 @@ public class MainFrame extends JFrame {
 		return this.mainPanel;
 	}
 
+
+
+	public Pausenraum getPr() {
+		return pr;
+	}
+
+
+
+	public void setPr(Pausenraum pr) {
+		this.pr = pr;
+	}
+
+
+
+	public SouthPanel getSp() {
+		return sp;
+	}
+
+
+
+	public void setSp(SouthPanel sp) {
+		this.sp = sp;
+	}
+
 }
