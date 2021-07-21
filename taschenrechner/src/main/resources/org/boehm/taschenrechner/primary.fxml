@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
@@ -9,7 +10,11 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.geometry.Insets?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.boehm.taschenrechner.PrimaryController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity"
+	minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+	prefWidth="600.0" stylesheets="@calculator.css"
+	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="org.boehm.taschenrechner.PrimaryController">
 	<columnConstraints>
 		<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
 		<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -26,26 +31,29 @@
 		<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
 	</rowConstraints>
 	<children>
-		<Button fx:id="btn_7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#listenToKeys" text="7" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-		<Button fx:id="btn_3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#listenToKeys" text="3" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-		<Button fx:id="btn_2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#listenToKeys" text="2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-		<Button fx:id="btn_6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#listenToKeys" text="6" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-		<Button fx:id="btn_5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#listenToKeys" text="5" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-		<Button fx:id="btn_9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#listenToKeys" text="9" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-		<Button fx:id="btn_8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#listenToKeys" text="8" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-		<Button fx:id="btn_1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#listenToKeys" text="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-		<Button fx:id="btn_4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#listenToKeys" text="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-		<Button fx:id="btn_c" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cListener" text="C" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-		<Button fx:id="btn_enter" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#enterListener" text="Enter" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
-		<Button fx:id="btn_dot" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#operationKeyListener" text="." GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
-		<Button fx:id="btn_plus" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#operationKeyListener" text="+" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-		<Button fx:id="btn_minus" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#operationKeyListener" text="-" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-		<Button fx:id="btn_mal" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#operationKeyListener" text="*" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-		<Button fx:id="btn_durch" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#operationKeyListener" text="/" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-		<Button fx:id="btn_0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#listenToKeys" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
-		<Button fx:id="btn_vorzeichen" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="+/-" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-		<TextArea fx:id="ausgabe" prefHeight="113.0" prefWidth="597.0" GridPane.columnSpan="4" GridPane.rowSpan="2" />
-      <Button fx:id="btn_ce" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#delListener" text="Del" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+		<Button fx:id="btn_7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#listenToKeys" styleClass="operator" text="7" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+		<Button fx:id="btn_3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#listenToKeys" styleClass="operator" text="3" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+		<Button fx:id="btn_2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#listenToKeys" styleClass="operator" text="2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+		<Button fx:id="btn_6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#listenToKeys" styleClass="operator" text="6" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+		<Button fx:id="btn_5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#listenToKeys" styleClass="operator" text="5" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+		<Button fx:id="btn_9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#listenToKeys" styleClass="operator" text="9" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+		<Button fx:id="btn_8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#listenToKeys" styleClass="operator" text="8" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+		<Button fx:id="btn_1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#listenToKeys" styleClass="operator" text="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+		<Button fx:id="btn_4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#listenToKeys" styleClass="operator" text="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+		<Button fx:id="btn_c" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cListener" styleClass="equals" text="C" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+		<Button fx:id="btn_enter" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#enterListener" styleClass="equals" text="Enter" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+		<Button fx:id="btn_dot" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#operationKeyListener" styleClass="operator" text="." GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+		<Button fx:id="btn_plus" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#operationKeyListener" styleClass="equals" text="+" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+		<Button fx:id="btn_minus" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#operationKeyListener" styleClass="equals" text="-" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+		<Button fx:id="btn_mal" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#operationKeyListener" styleClass="equals" text="*" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+		<Button fx:id="btn_durch" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#operationKeyListener" styleClass="equals" text="/" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+		<Button fx:id="btn_0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#listenToKeys" styleClass="operator" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+		<Button fx:id="btn_vorzeichen" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="equals" text="+/-" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+		<TextArea fx:id="ausgabe" prefHeight="113.0" prefWidth="597.0" GridPane.columnSpan="4" GridPane.rowSpan="2">
+         <font>
+            <Font name="Rockwell Extra Bold" size="50.0" />
+         </font></TextArea>
+      <Button fx:id="btn_ce" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#delListener" styleClass="equals" text="Del" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 	</children>
 	<opaqueInsets>
 		<Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
