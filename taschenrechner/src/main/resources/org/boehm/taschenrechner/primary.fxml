@@ -45,7 +45,7 @@
 		<Button fx:id="btn_0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#listenToKeys" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
 		<Button fx:id="btn_vorzeichen" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="+/-" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
 		<TextArea fx:id="ausgabe" prefHeight="113.0" prefWidth="597.0" GridPane.columnSpan="4" GridPane.rowSpan="2" />
-      <Button fx:id="btn_ce" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cEListener" text="CE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Button fx:id="btn_ce" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#delListener" text="Del" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 	</children>
 	<opaqueInsets>
 		<Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
