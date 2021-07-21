@@ -11,7 +11,7 @@ import javafx.scene.control.TextArea;
 public class PrimaryController {
 
 	@FXML
-	Button btn_0, btn_1, btn_2, btn_3, btn_4, btn_5, btn_6, btn_7, btn_8, btn_9, btn_c, btn_durch, btn_mal, btn_plus,
+	Button btn_0, btn_1, btn_2, btn_3, btn_4, btn_5, btn_6, btn_7, btn_8, btn_9, btn_c, btn_ce, btn_durch, btn_mal, btn_plus,
 			btn_minus, btn_enter, btn_dot, btn_vorzeichen;
 
 	@FXML
@@ -33,6 +33,9 @@ public class PrimaryController {
 					monitor = monitor.substring(0, monitor.length() - 1) + eingabe;
 					ausgabe.setText(monitor);
 				} else
+					if(monitor.contains("+")||monitor.contains("-")||monitor.contains("*")||monitor.contains("/")) {
+						ausgabe.setText(ALU.ausrechnen(ausgabe.getText()));
+					}
 					ausgabe.appendText(btn.getText());
 			}
 		}
@@ -53,5 +56,10 @@ public class PrimaryController {
 	@FXML
 	private void cListener(ActionEvent e) {
 		ausgabe.setText("");
+	}
+	@FXML
+	private void cEListener(ActionEvent e) {
+		String tmp=ausgabe.getText().substring(0, ausgabe.getText().length()-1);
+		ausgabe.setText(tmp);
 	}
 }
