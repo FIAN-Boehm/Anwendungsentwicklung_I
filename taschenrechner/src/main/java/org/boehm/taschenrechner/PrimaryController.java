@@ -33,7 +33,7 @@ public class PrimaryController {
 					monitor = monitor.substring(0, monitor.length() - 1) + eingabe;
 					ausgabe.setText(monitor);
 				} else
-					if(monitor.contains("+")||monitor.contains("-")||monitor.contains("*")||monitor.contains("/")) {
+					if(monitor.contains("*")||monitor.contains("/")) {
 						ausgabe.setText(ALU.ausrechnen(ausgabe.getText()));
 					}
 					ausgabe.appendText(btn.getText());
