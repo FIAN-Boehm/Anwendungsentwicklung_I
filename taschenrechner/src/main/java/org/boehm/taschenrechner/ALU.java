@@ -59,22 +59,20 @@ public class ALU {
 		return ergebnis;
 	}
 
-	public static String ausrechnen (String eingabe) {
-		double ergebnis=0;
-		
-		if(eingabe.contains("+")){
-		ergebnis=addieren(eingabe);
+	public static String ausrechnen(String eingabe) {
+		double ergebnis = 0;
+
+		if (eingabe.contains("+")) {
+			ergebnis = addieren(eingabe);
+		} else if (eingabe.contains("-")) {
+			ergebnis = subtrahieren(eingabe);
+			
+		} else if (eingabe.contains("*")) {
+			ergebnis = multiplizieren(eingabe);
+		} else if (eingabe.contains("/")) {
+			ergebnis = dividieren(eingabe);
 		}
-		else if(eingabe.contains("-")){
-			ergebnis=subtrahieren(eingabe);
-		}
-		else if(eingabe.contains("*")){
-			ergebnis=multiplizieren(eingabe);
-		}
-		else if(eingabe.contains("/")){
-			ergebnis=dividieren(eingabe);
-		}
-		String ergebnisText = ""+ergebnis;
+		String ergebnisText = "" + ergebnis;
 		return ergebnisText;
 	}
 
