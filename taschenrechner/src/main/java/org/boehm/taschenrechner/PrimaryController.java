@@ -58,7 +58,7 @@ public class PrimaryController {
 		ausgabe.setText("");
 	}
 	@FXML
-	private void cEListener(ActionEvent e) {
+	private void delListener(ActionEvent e) {
 		String tmp=ausgabe.getText().substring(0, ausgabe.getText().length()-1);
 		ausgabe.setText(tmp);
 	}
