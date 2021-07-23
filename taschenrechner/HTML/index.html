@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<!-- Head = Information über die Seite -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Kay Böhm">
+    <meta name="publisher" content="KB">
+    <meta name="description" content="Eine kurze und präzise Beschreibung der Seite">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="world.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+
+
+
+    <!-- Zumladen einer Seite alle x Sekunden -->
+    <!-- <meta http-equiv="refresh" content="5"> -->
+    <title> 267180-Gruppe4 </title>
+
+</head>
+<!-- Sichtbarer Bereich -->
+
+<body>
+    <header>
+        <h1>Meine Webseite</h1>
+        <!-- Navigation -->
+        <nav>
+            <a href="#meine_tabelle">Tabelle</a>
+            <a href="#">Link 1</a>
+            <a href="#">Link 1</a>
+            <a href="index.html" target="_blank" rel="noopener noreferrer">Index</a>
+        </nav>
+        <!-- Line -->
+        <hr>
+    </header>
+    <!-- bis HTML5 -->
+    <div class="main">
+
+    </div>
+    <!-- ab HTML 5 -->
+    <main>
+        <!-- Section - Themenbezogene Abschnitte -->
+        <section>
+            <h1> Die Hauptüberschift</h1>
+            <p>Hier kommt ein Text mit Absätzen</p>
+        </section>
+        <section>
+            <h2>Hier kommt eine andere Überschrift</h2>
+            <p>Hier kommt ein weiterer Text</p>
+        </section>
+        <article>
+            <h1>Dies ist ein Artikel</h1>
+            <p>Text Text Text</p>
+        </article>
+        <!-- Strukturierungsmarkierung zur Seitenstrukturierung -->
+        <aside>
+            <h3>Aside</h3>
+            <p>Text</p>
+        </aside>
+        <address>
+            Diese Websiete gehört mir<br>
+            Noch was mehr <br>
+        </address>
+        <article>
+            <p>Grundstücks&shy;verkehrsgenehmigungszuständigkeits<wbr>übertragungsverordnung </p>
+            WortA WortB <br>
+            WortC &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WortD
+        </article>
+        <!-- Zitieren -->
+        <Blockquote cite="https://www.blindtextgenerator.de">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+            Cum
+            sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        </Blockquote>
+        <!-- Seitenstrukturierung mit div -->
+        <div class="article">
+            <h4>Artikel im Div</h4>
+        </div>
+        <!-- kann auch mit div.klasse deklariert werden. mehrfachklassen div.klasse1-klasse2.klasseN -->
+        <div class="klassenlos">
+
+        </div>
+        <!-- Navigation -->
+        <nav>
+            <!-- Unsortet List -->
+            <ul>
+                <!-- List Items -->
+                <li>Link 1</li>
+                <li>Link 2</li>
+                <li>Link 3</li>
+
+            </ul>
+        </nav>
+
+        <!-- Listen -->
+        <!-- Ungeordnete Listen -->
+        <ul>
+            <li>ListItem</li>
+            <li>Noch eins</li>
+            <li>Ein drittes</li>
+        </ul>
+
+        <!-- Geordnete Liste -->
+        <ol reversed="reversed">
+            <li>ListItem</li>
+            <li>Noch eins</li>
+            <li>Ein drittes</li>
+        </ol>
+        <ol start="20">
+            <li>ListItem</li>
+            <li value=100>Noch eins</li>
+            <li>Ein drittes</li>
+        </ol>
+
+        <!-- verschachtelte Liste -->
+        <ul>
+            <li>ListItem</li>
+            <li>Noch eins</li>
+            <ul>
+                <li>Ein drittes</li>
+            </ul>
+        </ul>
+        <!-- Beschreibungslisten -->
+        <dl>
+            <dt>42</dt>
+            <dd>Quartum Duom</dd>
+            <dt>23</dt>
+            <dd>Eine Nummer</dd>
+        </dl>
+        <!-- Elemente für Textauszeichnungen -->
+        <p>Das <abbr title="World Wide Web">www</abbr> ist ganz fein.</p>
+        <pre>
+            <code>
+                public void main (){
+                    syso("Hello Weltherrschaft");
+                }
+            </code>
+        </pre>
+        <!-- Umdrehen -->
+        <p><bdo dir="rtl">Lorem ipsum dorum</bdo></p>
+        <p>
+            <!-- kursiv seit HTML5-->
+            <em>
+                EM Text
+            </em><br>
+            <!-- bold vor HTML5-->
+            <b>B Text</b><br>
+            <!-- bold seit HTML5 -->
+            <strong>
+                Strong Text
+            </strong><br>
+            <!-- kursiv vor HTML5 -->
+            <i>
+                altes Kursiv
+            </i>
+
+        </p>
+        <p>
+            <mark>Lorem ipsum dolor sit amet</mark>, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+        </p>
+        <p>
+            Wir treffen uns am <time datetime="2020-07-26">nächsten Montag</time> wieder. <br>
+            Uhrzeit:8 Uhr.
+        </p>
+        <p>
+            <small>Das kleingedruckte Zeug.</small>
+        </p>
+        <!-- Tabelle -->
+        <div class="meine_tabelle" id="meine_tabelle">
+            <table>
+                <!-- Tabellenüberschrift -->
+                <thead>
+
+                    <tr>
+                        <th>Browser</th>
+                        <th>Installation</th>
+                        <th>Nutzung Stunden/Woche</th>
+                    </tr>
+                </thead>
+                <!-- Footer muss nicht am Ende stehen -->
+                <tfoot>
+                    <tr>
+                        <th>Gesamt</th>
+                        <th>26456</th>
+                        <th>68</th>
+                    </tr>
+                </tfoot>
+                <!-- Tabelleninhalt tr für row, td für collumn -->
+                <tbody>
+                    <tr>
+                        <td> Chrome</td>
+                        <td>123456</td>
+                        <td>42</td>
+                    </tr>
+                    <tr>
+                        <td>Firefox</td>
+                        <td>2345</td>
+                        <td>21</td>
+                    </tr>
+                    <!-- Ein Bild einfügen -->
+                    <tr>
+                        <td><img src="world.png" alt="Eine Weltkugel" title="Die Welt als Bild"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Bild als Link -->
+        <a href="#"><img src="world.png" alt="Eine Weltkugel" title="Welt"></a>
+        <h1>Eine Zeichenfläche</h1>
+        <canvas id="canvas_field" width="400" height="200">
+            Ihr Browser untestützt Canvas nicht!
+        </canvas>
+    </main>
+    <footer>
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">Rechtliches</a>
+        <a href="#">Kontakt</a>
+    </footer>
+
+
+
+</html>

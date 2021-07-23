@@ -1,0 +1,22 @@
+body{
+    background-color: cornflowerblue;
+}
+header{
+    background-color: darkorange;
+}
+
+.meine_tabelle{
+    background-color: hotpink;
+}
+
+canvas{
+    background-color: lawngreen;
+}
+table{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border: lightsalmon solid 5px;
+    border-collapse: collapse;
+}
+tr{
+    border: maroon 5px dotted;
+}
